@@ -10,7 +10,7 @@ LLM-generated RTL can look correct while producing the wrong signal in simulatio
 
 ## The result
 
-On 60 compatible problems selected by a fixed metadata-only hardness rule, one-shot generation passed 44 of 60, for a 73.33333333333334% pass rate. The feedback loop passed 59 of 60, for a 98.33333333333333% pass rate, fixing 15 failures. The run used 78 new Claude calls, took 1160.266 seconds, and had $0 direct API cost.
+On 60 compatible problems selected by a fixed metadata-only hardness rule, one-shot generation passed 44 of 60, for a 73.33333333333333% pass rate. The feedback loop passed 59 of 60, for a 98.33333333333333% pass rate, fixing 15 failures. The run used 78 new Claude calls, took 1160.266 seconds, and had $0 direct API cost.
 
 The official dataset has 156 problems. An Icarus Verilog 13.0 compatibility sweep passed 155. Prob099 was excluded because its official testbench references Y2 and Y4 ports that are missing from its reference module.
 
