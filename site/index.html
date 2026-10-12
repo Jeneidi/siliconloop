@@ -23,6 +23,8 @@
     .replay-step { min-width: 0; }
     .replay-step h3 { margin-bottom: 0.65rem; }
     .replay-status { margin-bottom: 1rem; color: var(--color-tungsten); font-family: var(--font-mono); font-size: 0.88rem; }
+    .replay-status, .stat b { overflow-wrap: anywhere; }
+    html, body { overflow-x: hidden; }
     .fine-print { margin-top: 1rem; color: var(--color-haze); font-size: 0.875rem; }
     .section-note { margin-top: 1rem; color: var(--color-haze); font-size: 0.9rem; }
     @media (min-width: 900px) { .replay-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -50,7 +52,7 @@
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
           <span>GitHub</span>
         </a>
-        <a class="btn btn-primary header-cta" href="#try">Replay the run</a>
+        <a class="btn btn-primary header-cta" href="#try">Replay a fix</a>
         <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -63,7 +65,7 @@
           <li><a href="#try">Replay</a></li>
           <li><a href="https://github.com/Jeneidi/siliconloop" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
-        <a class="btn btn-primary mobile-nav-cta" href="#try">Replay the run</a>
+        <a class="btn btn-primary mobile-nav-cta" href="#try">Replay a fix</a>
       </div>
     </div>
   </header>
@@ -77,7 +79,7 @@
       </h1>
       <p class="lead hero-sub">SiliconLoop asks an LLM to write Verilog, then lets an Icarus Verilog testbench decide whether the circuit actually works.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#try">Replay a judged run</a>
+        <a class="btn btn-primary" href="#try">Replay a real fix</a>
         <a class="btn btn-ghost" href="#results">See the numbers</a>
       </div>
     </section>
@@ -123,19 +125,19 @@ pass / feedback</pre>
     <section class="section band center" id="results" aria-labelledby="results-title">
       <div class="wrap">
         <p class="eyebrow">Measured, not claimed</p>
-        <h2 id="results-title" class="h2">The pilot found no retry lift.</h2>
-        <p class="lead">15 problems, 3 repeats, 2 allowed retries, and 45 recorded Claude outputs. One-shot is the baseline.</p>
+        <h2 id="results-title" class="h2">Feedback rescued the hard cases.</h2>
+        <p class="lead">60 hard compatible problems, 2 allowed retries, and 78 new Claude outputs. One-shot is the baseline.</p>
         <div class="stats">
-          <div class="stat"><b>100%</b><span>One-shot pass rate</span></div>
-          <div class="stat"><b>100%</b><span>Looped pass rate</span></div>
-          <div class="stat"><b>45</b><span>Claude calls used</span></div>
-          <div class="stat"><b>6.108s</b><span>Mean per problem</span></div>
+          <div class="stat"><b>73.33333333333334%</b><span>One-shot pass rate</span></div>
+          <div class="stat"><b>98.33333333333333%</b><span>Looped pass rate</span></div>
+          <div class="stat"><b>78</b><span>New Claude calls</span></div>
+          <div class="stat"><b>1160.266s</b><span>Total run time</span></div>
         </div>
-        <p class="section-note">The official dataset contains 156 problems. 155 compiled with Icarus 13.0 in the compatibility sweep. Prob099 was excluded because its testbench references two ports missing from its reference module.</p>
+        <p class="section-note">The official dataset contains 156 problems. 155 compiled with Icarus 13.0 in the compatibility sweep. Prob099 was excluded because its testbench references Y2 and Y4, while its reference module exposes Y1 and Y3. Feedback fixed 15 failures. Prob149 remained a wrong-output failure after two retries.</p>
         <div class="result-table-wrap">
-          <table class="result-table" aria-label="Per-problem pilot results">
-            <thead><tr><th>Problem</th><th>Trials</th><th>One-shot</th><th>Looped</th><th>Retries fixing it</th></tr></thead>
-            <tbody id="results-body"><tr><td colspan="5">Recorded pilot results</td></tr></tbody>
+          <table class="result-table" aria-label="Selected hard-problem results">
+            <thead><tr><th>Problem</th><th>Score</th><th>One-shot</th><th>Looped</th><th>Retries</th></tr></thead>
+            <tbody id="results-body"><tr><td colspan="5">Recorded hard-problem results</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -171,7 +173,7 @@ pass / feedback</pre>
         <div>
           <p class="eyebrow">Try it</p>
           <h2 id="try-title" class="h2">Watch a wrong module become a pass.</h2>
-          <p class="prose">This controlled replay uses the real Prob001 prompt, a deliberately flipped output, and the recorded Claude candidate. The Icarus verdict is shown for each attempt.</p>
+          <p class="prose">This natural replay uses Prob151 from the selected run. Its first candidate failed to compile, the retry received the real Icarus error, and the repaired candidate passed the official testbench.</p>
         </div>
       </div>
       <div class="replay-grid" aria-live="polite">
@@ -194,7 +196,7 @@ pass / feedback</pre>
           <pre id="second-candidate" class="code">Recorded second candidate</pre>
         </div>
       </div>
-      <p class="fine-print">Recorded with Claude Haiku 5.5 via Claude Code, 2026-10-12. The first failure is labeled as a controlled replay fixture because the pilot's natural one-shot outputs all passed.</p>
+      <p class="fine-print">Recorded with Claude Haiku 5.5 via Claude Code, 2026-10-12. The replay is natural evidence from the 60-problem run, not a staged fixture.</p>
     </section>
 
     <section class="section band center" aria-labelledby="cta-title">
@@ -242,18 +244,14 @@ pass / feedback</pre>
       const renderTable = (data) => {
         const grouped = new Map();
         for (const row of data.rows) {
-          const current = grouped.get(row.problem_id) || { problem_id: row.problem_id, trials: 0, one: 0, looped: 0, fixed: 0 };
-          current.trials += 1;
-          current.one += row.one_shot_status === "pass" ? 1 : 0;
-          current.looped += row.looped_status === "pass" ? 1 : 0;
-          current.fixed += row.fixed_by_retry ? 1 : 0;
-          grouped.set(row.problem_id, current);
+          const score = data.selection.find((item) => item.problem_id === row.problem_id)?.score;
+          grouped.set(row.problem_id, { problem_id: row.problem_id, score, one: row.one_shot_status, looped: row.looped_status, retries: row.retry_count });
         }
         const body = byId("results-body");
         body.replaceChildren();
         for (const row of grouped.values()) {
           const tr = document.createElement("tr");
-          [row.problem_id, row.trials, `${row.one}/${row.trials}`, `${row.looped}/${row.trials}`, row.fixed].forEach((value, index) => {
+          [row.problem_id, row.score, row.one, row.looped, row.retries].forEach((value, index) => {
             const cell = document.createElement("td");
             cell.textContent = value;
             if (index === 2 || index === 3) cell.className = "pass";
@@ -269,7 +267,7 @@ pass / feedback</pre>
         renderTable(data);
         const option = document.createElement("option");
         option.value = "replay";
-        option.textContent = `${data.replay.problem_id} | controlled failure to PASS`;
+        option.textContent = `${data.replay.problem_id} | compile error to PASS`;
         selectedRun.append(option);
         renderReplay(data);
       }).catch((error) => {

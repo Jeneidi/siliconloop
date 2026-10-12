@@ -10,13 +10,13 @@ LLM-generated RTL can look correct while producing the wrong signal in simulatio
 
 ## The result
 
-On a 15-problem pilot repeated 3 times, one-shot generation passed 45 of 45 judged attempts, for a 100% pass rate. The retry loop also passed 45 of 45, for a 100% pass rate, so retries added no lift on this pilot. The uncached run used 45 Claude calls, averaged 6.108 seconds per problem, and had $0 direct API cost.
+On 60 compatible problems selected by a fixed metadata-only hardness rule, one-shot generation passed 44 of 60, for a 73.33333333333334% pass rate. The feedback loop passed 59 of 60, for a 98.33333333333333% pass rate, fixing 15 failures. The run used 78 new Claude calls, took 1160.266 seconds, and had $0 direct API cost.
 
 The official dataset has 156 problems. An Icarus Verilog 13.0 compatibility sweep passed 155. Prob099 was excluded because its official testbench references Y2 and Y4 ports that are missing from its reference module.
 
 ## How it works
 
-1. Download the NVlabs VerilogEval spec-to-RTL prompts, references, and testbenches.
+1. Download the NVlabs VerilogEval spec-to-RTL prompts, references, and testbenches, exclude incompatible fixtures, and rank the compatible problems by fixed metadata-only hardness score.
 2. Ask Claude Haiku 5.5 for one standalone `TopModule` from the English spec.
 3. Compile and simulate the candidate with Icarus Verilog 13.0 in a temporary folder.
 4. Feed compiler or mismatch text back for up to 2 retries when the judge does not pass.
@@ -28,7 +28,7 @@ The data comes from the [NVlabs VerilogEval repository](https://github.com/NVlab
 
 ## Evaluation method
 
-The judge compiles the candidate, reference module, and official testbench with `iverilog -g2012`, then runs `vvp`. A run passes only when the testbench prints `Mismatches: 0`. Compile errors, wrong output, and timeouts are recorded separately. Each simulation has a 10-second timeout. The website replays the real Prob001 prompt and judge output without requiring an API key.
+The judge compiles the candidate, reference module, and official testbench with `iverilog -g2012`, then runs `vvp`. A run passes only when the testbench prints `Mismatches: 0`. Compile errors, wrong output, and timeouts are recorded separately. Each simulation has a 10-second timeout. The website replays the real Prob151 prompt, compiler feedback, and repaired candidate without requiring an API key.
 
 ## How to run
 
@@ -53,8 +53,7 @@ Download the official dataset and run the bounded experiment:
   --data-dir data/verilog_eval \
   --output site/data/results.json \
   --cache-dir data/claude_cache \
-  --problems 15 \
-  --repeats 3 \
+  --problems 60 \
   --retries 2 \
   --model claude-haiku-5-5
 ```
@@ -70,7 +69,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 ## Limitations
 
-This build reports a bounded 15-problem pilot rather than full-dataset model performance. The simplified build brief drops confidence intervals and statistical tests, so the site does not claim a 95% interval. All natural pilot generations passed on the first attempt, so the replay uses a clearly labeled controlled one-line failure fixture followed by the recorded candidate. Prob099 remains excluded from evaluation because its official fixture is incompatible with the installed Icarus 13.0 environment for the reason above. The static site is recorded evidence only and does not compile visitor-supplied RTL in the browser.
+This build reports 60 selected problems rather than full-dataset model performance. The fixed selection rule uses only prompt, reference, and testbench metadata, before model results are observed. One-shot failures include 14 compile errors and 2 wrong outputs. Feedback fixed 15 failures, while Prob149 remained a wrong-output failure after two retries. Prob099 remains excluded from evaluation because its official fixture is incompatible with the installed Icarus 13.0 environment for the reason above. The static site is recorded evidence only and does not compile visitor-supplied RTL in the browser.
 
 ## Credits
 

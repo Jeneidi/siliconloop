@@ -4,1001 +4,2076 @@
   "model": "claude-haiku-5-5",
   "dataset": "NVlabs VerilogEval dataset_spec-to-rtl",
   "dataset_target_problems": 156,
-  "pilot_problems_per_trial": 15,
-  "repeats": 3,
+  "compatible_problem_count": 155,
+  "excluded_compatibility_problems": [
+    {
+      "problem_id": "Prob099",
+      "title": "m2014 q6c",
+      "reason": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-compat-vprr8823/test.sv:71: error: port ``Y2'' is not a port of good1.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-compat-vprr8823/test.sv:71: error: port ``Y4'' is not a port of good1.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-compat-vprr8823/test.sv:77: warning: Port 4 (y) of module TopModule expects 1 bit(s), given 6.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-compat-vprr8823/test.sv:77:        : Pruning 5 high bits of the expression.\n2 error(s) during elaboration."
+    }
+  ],
+  "selection_rule": "Compatible problems are ranked before any model call by score = 100 * FSM indicator + 50 * sequential indicator + 10 * temporal/state keyword count + prompt line count + 0.5 * reference line count + 0.25 * testbench line count. Ties use problem ID. FSM indicators are state machine, FSM, Moore, Mealy, or transition table. Sequential indicators are posedge, clock, reset, sequential, flip-flop, latch, counter, or timer.",
+  "selected_problem_count": 60,
+  "selection": [
+    {
+      "problem_id": "Prob150",
+      "title": "review2015 fsmonehot",
+      "score": 807.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 53,
+      "prompt_lines": 61,
+      "reference_lines": 30,
+      "testbench_lines": 207
+    },
+    {
+      "problem_id": "Prob156",
+      "title": "review2015 fancytimer",
+      "score": 668.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 38,
+      "prompt_lines": 44,
+      "reference_lines": 78,
+      "testbench_lines": 220
+    },
+    {
+      "problem_id": "Prob151",
+      "title": "review2015 fsm",
+      "score": 527.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 26,
+      "prompt_lines": 37,
+      "reference_lines": 56,
+      "testbench_lines": 208
+    },
+    {
+      "problem_id": "Prob143",
+      "title": "fsm onehot",
+      "score": 510.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 25,
+      "prompt_lines": 52,
+      "reference_lines": 25,
+      "testbench_lines": 184
+    },
+    {
+      "problem_id": "Prob155",
+      "title": "lemmings4",
+      "score": 388.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 62,
+      "reference_lines": 60,
+      "testbench_lines": 305
+    },
+    {
+      "problem_id": "Prob148",
+      "title": "2013 q2afsm",
+      "score": 361.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 10,
+      "prompt_lines": 45,
+      "reference_lines": 35,
+      "testbench_lines": 195
+    },
+    {
+      "problem_id": "Prob153",
+      "title": "gshare",
+      "score": 361.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 15,
+      "prompt_lines": 62,
+      "reference_lines": 49,
+      "testbench_lines": 298
+    },
+    {
+      "problem_id": "Prob133",
+      "title": "2014 q3fsm",
+      "score": 351.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 12,
+      "prompt_lines": 23,
+      "reference_lines": 35,
+      "testbench_lines": 165
+    },
+    {
+      "problem_id": "Prob152",
+      "title": "lemmings3",
+      "score": 346.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 52,
+      "reference_lines": 48,
+      "testbench_lines": 241
+    },
+    {
+      "problem_id": "Prob139",
+      "title": "2013 q2bfsm",
+      "score": 333.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 10,
+      "prompt_lines": 29,
+      "reference_lines": 38,
+      "testbench_lines": 141
+    },
+    {
+      "problem_id": "Prob119",
+      "title": "fsm3",
+      "score": 332.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 10,
+      "prompt_lines": 22,
+      "reference_lines": 30,
+      "testbench_lines": 181
+    },
+    {
+      "problem_id": "Prob142",
+      "title": "lemmings2",
+      "score": 318.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 37,
+      "reference_lines": 36,
+      "testbench_lines": 212
+    },
+    {
+      "problem_id": "Prob100",
+      "title": "fsm3comb",
+      "score": 317.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 0,
+      "temporal_keyword_count": 15,
+      "prompt_lines": 24,
+      "reference_lines": 23,
+      "testbench_lines": 129
+    },
+    {
+      "problem_id": "Prob154",
+      "title": "fsm ps2data",
+      "score": 317.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 70,
+      "reference_lines": 42,
+      "testbench_lines": 144
+    },
+    {
+      "problem_id": "Prob129",
+      "title": "ece241 2013 q8",
+      "score": 313.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 8,
+      "prompt_lines": 18,
+      "reference_lines": 37,
+      "testbench_lines": 188
+    },
+    {
+      "problem_id": "Prob120",
+      "title": "fsm3s",
+      "score": 311.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 8,
+      "prompt_lines": 22,
+      "reference_lines": 30,
+      "testbench_lines": 179
+    },
+    {
+      "problem_id": "Prob140",
+      "title": "fsm hdlc",
+      "score": 305.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 31,
+      "reference_lines": 37,
+      "testbench_lines": 144
+    },
+    {
+      "problem_id": "Prob127",
+      "title": "lemmings1",
+      "score": 301.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 28,
+      "reference_lines": 31,
+      "testbench_lines": 190
+    },
+    {
+      "problem_id": "Prob138",
+      "title": "2012 q2fsm",
+      "score": 298.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 33,
+      "reference_lines": 31,
+      "testbench_lines": 120
+    },
+    {
+      "problem_id": "Prob080",
+      "title": "timer",
+      "score": 297.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 17,
+      "prompt_lines": 29,
+      "reference_lines": 18,
+      "testbench_lines": 156
+    },
+    {
+      "problem_id": "Prob091",
+      "title": "2012 q2b",
+      "score": 289.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 34,
+      "reference_lines": 13,
+      "testbench_lines": 156
+    },
+    {
+      "problem_id": "Prob121",
+      "title": "2014 q3bfsm",
+      "score": 289.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 22,
+      "reference_lines": 31,
+      "testbench_lines": 128
+    },
+    {
+      "problem_id": "Prob079",
+      "title": "fsm3onehot",
+      "score": 285.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 0,
+      "temporal_keyword_count": 12,
+      "prompt_lines": 23,
+      "reference_lines": 19,
+      "testbench_lines": 131
+    },
+    {
+      "problem_id": "Prob096",
+      "title": "review2015 fsmseq",
+      "score": 285.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 16,
+      "reference_lines": 30,
+      "testbench_lines": 176
+    },
+    {
+      "problem_id": "Prob095",
+      "title": "review2015 fsmshift",
+      "score": 281.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 18,
+      "reference_lines": 29,
+      "testbench_lines": 115
+    },
+    {
+      "problem_id": "Prob089",
+      "title": "ece241 2014 q5a",
+      "score": 265.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 19,
+      "reference_lines": 26,
+      "testbench_lines": 175
+    },
+    {
+      "problem_id": "Prob135",
+      "title": "m2014 q6b",
+      "score": 260.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 28,
+      "reference_lines": 27,
+      "testbench_lines": 117
+    },
+    {
+      "problem_id": "Prob110",
+      "title": "fsm2",
+      "score": 259.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 20,
+      "reference_lines": 29,
+      "testbench_lines": 180
+    },
+    {
+      "problem_id": "Prob146",
+      "title": "fsm serialdata",
+      "score": 259.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 2,
+      "prompt_lines": 27,
+      "reference_lines": 46,
+      "testbench_lines": 158
+    },
+    {
+      "problem_id": "Prob088",
+      "title": "ece241 2014 q5b",
+      "score": 259.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 23,
+      "reference_lines": 25,
+      "testbench_lines": 175
+    },
+    {
+      "problem_id": "Prob111",
+      "title": "fsm2s",
+      "score": 259.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 20,
+      "reference_lines": 29,
+      "testbench_lines": 178
+    },
+    {
+      "problem_id": "Prob107",
+      "title": "fsm1s",
+      "score": 256.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 19,
+      "reference_lines": 28,
+      "testbench_lines": 172
+    },
+    {
+      "problem_id": "Prob137",
+      "title": "fsm serial",
+      "score": 252.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 2,
+      "prompt_lines": 27,
+      "reference_lines": 38,
+      "testbench_lines": 147
+    },
+    {
+      "problem_id": "Prob128",
+      "title": "fsm ps2",
+      "score": 251.0,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 25,
+      "reference_lines": 32,
+      "testbench_lines": 120
+    },
+    {
+      "problem_id": "Prob136",
+      "title": "m2014 q6",
+      "score": 244.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 2,
+      "prompt_lines": 28,
+      "reference_lines": 33,
+      "testbench_lines": 120
+    },
+    {
+      "problem_id": "Prob144",
+      "title": "conwaylife",
+      "score": 242.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 9,
+      "prompt_lines": 34,
+      "reference_lines": 37,
+      "testbench_lines": 198
+    },
+    {
+      "problem_id": "Prob109",
+      "title": "fsm1",
+      "score": 237.25,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 1,
+      "prompt_lines": 20,
+      "reference_lines": 28,
+      "testbench_lines": 173
+    },
+    {
+      "problem_id": "Prob085",
+      "title": "shift4",
+      "score": 236.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 10,
+      "prompt_lines": 29,
+      "reference_lines": 21,
+      "testbench_lines": 186
+    },
+    {
+      "problem_id": "Prob074",
+      "title": "ece241 2014 q4",
+      "score": 235.5,
+      "fsm_indicator": 1,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 2,
+      "prompt_lines": 22,
+      "reference_lines": 17,
+      "testbench_lines": 140
+    },
+    {
+      "problem_id": "Prob086",
+      "title": "lfsr5",
+      "score": 235.25,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 11,
+      "prompt_lines": 23,
+      "reference_lines": 23,
+      "testbench_lines": 163
+    },
+    {
+      "problem_id": "Prob063",
+      "title": "review2015 shiftcount",
+      "score": 231.25,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 11,
+      "prompt_lines": 20,
+      "reference_lines": 18,
+      "testbench_lines": 169
+    },
+    {
+      "problem_id": "Prob134",
+      "title": "2014 q3c",
+      "score": 222.75,
+      "fsm_indicator": 1,
+      "sequential_indicator": 0,
+      "temporal_keyword_count": 5,
+      "prompt_lines": 22,
+      "reference_lines": 36,
+      "testbench_lines": 131
+    },
+    {
+      "problem_id": "Prob075",
+      "title": "counter 2bc",
+      "score": 221.5,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 9,
+      "prompt_lines": 20,
+      "reference_lines": 22,
+      "testbench_lines": 202
+    },
+    {
+      "problem_id": "Prob118",
+      "title": "history shift",
+      "score": 219.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 31,
+      "reference_lines": 25,
+      "testbench_lines": 222
+    },
+    {
+      "problem_id": "Prob115",
+      "title": "shift18",
+      "score": 217.25,
+      "fsm_indicator": 0,
+      "sequential_indicator": 0,
+      "temporal_keyword_count": 13,
+      "prompt_lines": 29,
+      "reference_lines": 24,
+      "testbench_lines": 185
+    },
+    {
+      "problem_id": "Prob147",
+      "title": "circuit10",
+      "score": 200.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 61,
+      "reference_lines": 18,
+      "testbench_lines": 163
+    },
+    {
+      "problem_id": "Prob084",
+      "title": "ece241 2013 q12",
+      "score": 199.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 27,
+      "reference_lines": 21,
+      "testbench_lines": 169
+    },
+    {
+      "problem_id": "Prob124",
+      "title": "rule110",
+      "score": 197.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 33,
+      "reference_lines": 22,
+      "testbench_lines": 175
+    },
+    {
+      "problem_id": "Prob067",
+      "title": "countslow",
+      "score": 195.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 7,
+      "prompt_lines": 18,
+      "reference_lines": 20,
+      "testbench_lines": 191
+    },
+    {
+      "problem_id": "Prob141",
+      "title": "count clock",
+      "score": 193.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 3,
+      "prompt_lines": 24,
+      "reference_lines": 47,
+      "testbench_lines": 265
+    },
+    {
+      "problem_id": "Prob082",
+      "title": "lfsr32",
+      "score": 192.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 8,
+      "prompt_lines": 20,
+      "reference_lines": 25,
+      "testbench_lines": 118
+    },
+    {
+      "problem_id": "Prob149",
+      "title": "ece241 2013 q4",
+      "score": 184.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 2,
+      "prompt_lines": 36,
+      "reference_lines": 46,
+      "testbench_lines": 223
+    },
+    {
+      "problem_id": "Prob108",
+      "title": "rule90",
+      "score": 184.25,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 5,
+      "prompt_lines": 31,
+      "reference_lines": 18,
+      "testbench_lines": 177
+    },
+    {
+      "problem_id": "Prob078",
+      "title": "dualedge",
+      "score": 171.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 15,
+      "reference_lines": 25,
+      "testbench_lines": 134
+    },
+    {
+      "problem_id": "Prob045",
+      "title": "edgedetect2",
+      "score": 168.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 6,
+      "prompt_lines": 15,
+      "reference_lines": 16,
+      "testbench_lines": 143
+    },
+    {
+      "problem_id": "Prob037",
+      "title": "review2015 count1k",
+      "score": 163.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 5,
+      "prompt_lines": 14,
+      "reference_lines": 15,
+      "testbench_lines": 169
+    },
+    {
+      "problem_id": "Prob038",
+      "title": "count15",
+      "score": 152.0,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 14,
+      "reference_lines": 15,
+      "testbench_lines": 162
+    },
+    {
+      "problem_id": "Prob035",
+      "title": "count1to10",
+      "score": 151.75,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 14,
+      "reference_lines": 15,
+      "testbench_lines": 161
+    },
+    {
+      "problem_id": "Prob040",
+      "title": "count10",
+      "score": 151.5,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 4,
+      "prompt_lines": 14,
+      "reference_lines": 15,
+      "testbench_lines": 160
+    },
+    {
+      "problem_id": "Prob145",
+      "title": "circuit8",
+      "score": 151.5,
+      "fsm_indicator": 0,
+      "sequential_indicator": 1,
+      "temporal_keyword_count": 0,
+      "prompt_lines": 54,
+      "reference_lines": 17,
+      "testbench_lines": 156
+    }
+  ],
   "max_retries": 2,
-  "one_shot_pass_rate": 1.0,
-  "looped_pass_rate": 1.0,
-  "one_shot_passes": 45,
-  "looped_passes": 45,
-  "evaluated_attempts": 45,
-  "fixed_by_retries": 0,
+  "one_shot_pass_rate": 0.7333333333333333,
+  "looped_pass_rate": 0.9833333333333333,
+  "one_shot_passes": 44,
+  "looped_passes": 59,
+  "evaluated_attempts": 60,
+  "fixed_by_retries": 15,
   "one_shot_failure_breakdown": {
-    "pass": 45
+    "compile_error": 14,
+    "pass": 44,
+    "wrong_output": 2
   },
   "looped_failure_breakdown": {
-    "pass": 45
+    "pass": 59,
+    "wrong_output": 1
   },
-  "mean_seconds_per_problem": 6.108,
+  "elapsed_seconds": 1160.266,
+  "mean_seconds_per_problem": 12.34,
   "direct_api_cost_usd": 0,
-  "llm_calls_made": 45,
-  "llm_calls_executed": 45,
-  "llm_cache_hits": 45,
+  "llm_calls_used": 78,
+  "llm_calls_executed": 78,
+  "llm_cache_hits": 0,
+  "new_call_budget": 130,
+  "retry_budget_exhausted": false,
   "rows": [
     {
-      "problem_id": "Prob001",
-      "title": "zero",
-      "trial": 1,
+      "problem_id": "Prob150",
+      "title": "review2015 fsmonehot",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.031,
-      "initial_response_cached": true,
+      "elapsed_seconds": 11.117,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n    input d,\n    input done_counting,\n    input ack,\n    input [9:0] state,\n    output B3_next,\n    output S_next,\n    output S1_next,\n    output Count_next,\n    output Wait_next,\n    output done,\n    output counting,\n    output shift_ena\n);\n\n    assign S_next      = ((state[0] | state[1] | state[3]) & ~d) | (state[9] & ack);\n    assign S1_next     = state[0] & d;\n    assign B3_next     = state[6];\n    assign Count_next  = state[7] | (state[8] & ~done_counting);\n    assign Wait_next   = (state[8] & done_counting) | (state[9] & ~ack);\n\n    assign shift_ena   = |state[7:4];\n    assign counting    = state[8];\n    assign done        = state[9];\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-0qmhi6ya/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-nkbuw7dm/test.sv:22: $finish called at 1501 (1ps)\nHint: Output 'B3_next' has no mismatches.\nHint: Output 'S_next' has no mismatches.\nHint: Output 'S1_next' has no mismatches.\nHint: Output 'Count_next' has no mismatches.\nHint: Output 'Wait_next' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'shift_ena' has no mismatches.\nHint: Total mismatched samples is 0 out of 300 samples\n\nSimulation finished at 1501 ps\nMismatches: 0 in 300 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob002",
-      "title": "m2014 q4i",
-      "trial": 1,
+      "problem_id": "Prob156",
+      "title": "review2015 fancytimer",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "elapsed_seconds": 20.165,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output out\n);\n    assign out = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  reset,\n    input  data,\n    output [3:0] count,\n    output counting,\n    output done,\n    input  ack\n);\n    localparam S0 = 3'd0, S1 = 3'd1, S2 = 3'd2, S3 = 3'd3, SHIFT = 3'd4, COUNT = 3'd5, DONE = 3'd6;\n\n    reg [2:0] state;\n    reg [1:0] sc;\n    reg [3:0] rem;\n    reg [9:0] cyc;\n\n    always @(posedge clk) begin\n        if (reset) begin\n            state <= S0;\n            sc    <= 2'd0;\n            rem   <= 4'd0;\n            cyc   <= 10'd0;\n        end else begin\n            case (state)\n                S0:    state <= data ? S1 : S0;\n                S1:    state <= data ? S2 : S0;\n                S2:    state <= data ? S2 : S3;\n                S3:    state <= data ? SHIFT : S0;\n                SHIFT: begin\n                    rem <= {rem[2:0], data};\n                    sc  <= sc + 2'd1;\n                    if (sc == 2'd3) state <= COUNT;\n                end\n                COUNT: begin\n                    if (cyc == 10'd999) begin\n                        cyc <= 10'd0;\n                        if (rem == 4'd0) state <= DONE;\n                        else rem <= rem - 4'd1;\n                    end else begin\n                        cyc <= cyc + 10'd1;\n                    end\n                end\n                DONE:  if (ack) state <= S0;\n                default: state <= S0;\n            endcase\n        end\n    end\n\n    assign count    = rem;\n    assign counting = (state == COUNT);\n    assign done     = (state == DONE);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-h53l1mda/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\nTIMEOUT\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-yc00359y/test.sv:216: $finish called at 1000000 (1ps)\nHint: Output 'count' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 200000 samples\n\nSimulation finished at 1000000 ps\nMismatches: 0 in 200000 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob003",
-      "title": "step one",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob151",
+      "title": "review2015 fsm",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 13.537,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    input  logic done_counting,\n    input  logic ack,\n    output logic shift_ena,\n    output logic counting,\n    output logic done\n);\n\n    typedef enum logic [3:0] {\n        S, S1, S11, S110, B0, B1, B2, B3, COUNT, DONE_S\n    } state_t;\n\n    state_t state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S;\n        else       state <= next_state;\n    end\n\n    always_comb begin\n        next_state = state;\n        case (state)\n            S:       next_state = data ? S1 : S;\n            S1:      next_state = data ? S11 : S;\n            S11:     next_state = data ? S11 : S110;\n            S110:    next_state = data ? B0 : S;\n            B0:      next_state = B1;\n            B1:      next_state = B2;\n            B2:      next_state = B3;\n            B3:      next_state = COUNT;\n            COUNT:   next_state = done_counting ? DONE_S : COUNT;\n            DONE_S:  next_state = ack ? S : DONE_S;\n            default: next_state = S;\n        endcase\n    end\n\n    assign shift_ena = (state == B0) || (state == B1) || (state == B2) || (state == B3);\n    assign counting  = (state == COUNT);\n    assign done      = (state == DONE_S);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:26: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:27: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:28: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:29: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:34: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:35: error: This assignment requires an explicit cast.\n6 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    input  logic done_counting,\n    input  logic ack,\n    output logic shift_ena,\n    output logic counting,\n    output logic done\n);\n\n    typedef enum logic [3:0] {\n        S, S1, S11, S110, B0, B1, B2, B3, COUNT, DONE_S\n    } state_t;\n\n    state_t state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S;\n        else       state <= next_state;\n    end\n\n    always_comb begin\n        next_state = state;\n        case (state)\n            S:       if (data) next_state = S1;\n            S1:      if (data) next_state = S11; else next_state = S;\n            S11:     if (!data) next_state = S110;\n            S110:    if (data) next_state = B0; else next_state = S;\n            B0:      next_state = B1;\n            B1:      next_state = B2;\n            B2:      next_state = B3;\n            B3:      next_state = COUNT;\n            COUNT:   if (done_counting) next_state = DONE_S;\n            DONE_S:  if (ack) next_state = S;\n            default: next_state = S;\n        endcase\n    end\n\n    assign shift_ena = (state == B0) || (state == B1) || (state == B2) || (state == B3);\n    assign counting  = (state == COUNT);\n    assign done      = (state == DONE_S);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-bx7cu6vb/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-vdebpr_4/test.sv:76: $finish called at 25346 (1ps)\nHint: Output 'shift_ena' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 5069 samples\n\nSimulation finished at 25346 ps\nMismatches: 0 in 5069 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob004",
-      "title": "vector2",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob143",
+      "title": "fsm onehot",
+      "one_shot_status": "wrong_output",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 8.953,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic [31:0] in,\n    output logic [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "candidate": "module TopModule (\n    input  in,\n    input  [9:0] state,\n    output [9:0] next_state,\n    output out1,\n    output out2\n);\n    assign next_state[0] = ~in & (state[0] | state[1] | state[2] | state[3] | state[4] | state[7] | state[8] | state[9]);\n    assign next_state[1] = in & (state[0] | state[1] | state[8] | state[9]);\n    assign next_state[2] = in & state[1];\n    assign next_state[3] = in & state[2];\n    assign next_state[4] = in & state[3];\n    assign next_state[5] = in & state[4];\n    assign next_state[6] = in & state[5];\n    assign next_state[7] = in & (state[6] | state[7]);\n    assign next_state[8] = ~in & state[5];\n    assign next_state[9] = ~in & state[6];\n\n    assign out1 = state[8] | state[9];\n    assign out2 = state[7] | state[9];\nendmodule",
+          "judge": {
+            "status": "wrong_output",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\nHint: next_state[0] is   correct.\nHint: next_state[1] is incorrect.\nHint: next_state[2] is   correct.\nHint: next_state[3] is   correct.\nHint: next_state[4] is   correct.\nHint: next_state[5] is   correct.\nHint: next_state[6] is   correct.\nHint: next_state[7] is   correct.\nHint: next_state[8] is   correct.\nHint: next_state[9] is   correct.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-glvdi9m1/test.sv:62: $finish called at 1121 (1ps)\nHint: Output 'next_state' has 22 mismatches. First mismatch occurred at time 75.\nHint: Output 'out1' has no mismatches.\nHint: Output 'out2' has no mismatches.\nHint: Total mismatched samples is 22 out of 224 samples\n\nSimulation finished at 1121 ps\nMismatches: 22 in 224 samples"
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  in,\n    input  [9:0] state,\n    output [9:0] next_state,\n    output out1,\n    output out2\n);\n    assign next_state[0] = ~in & (state[0] | state[1] | state[2] | state[3] | state[4] | state[7] | state[8] | state[9]);\n    assign next_state[1] = in & (state[0] | state[8] | state[9]);\n    assign next_state[2] = in & state[1];\n    assign next_state[3] = in & state[2];\n    assign next_state[4] = in & state[3];\n    assign next_state[5] = in & state[4];\n    assign next_state[6] = in & state[5];\n    assign next_state[7] = in & (state[6] | state[7]);\n    assign next_state[8] = ~in & state[5];\n    assign next_state[9] = ~in & state[6];\n\n    assign out1 = state[8] | state[9];\n    assign out2 = state[7] | state[9];\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-52s3enok/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\nHint: next_state[0] is   correct.\nHint: next_state[1] is   correct.\nHint: next_state[2] is   correct.\nHint: next_state[3] is   correct.\nHint: next_state[4] is   correct.\nHint: next_state[5] is   correct.\nHint: next_state[6] is   correct.\nHint: next_state[7] is   correct.\nHint: next_state[8] is   correct.\nHint: next_state[9] is   correct.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-dpwhecc1/test.sv:62: $finish called at 1121 (1ps)\nHint: Output 'next_state' has no mismatches.\nHint: Output 'out1' has no mismatches.\nHint: Output 'out2' has no mismatches.\nHint: Total mismatched samples is 0 out of 224 samples\n\nSimulation finished at 1121 ps\nMismatches: 0 in 224 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob005",
-      "title": "notgate",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob155",
+      "title": "lemmings4",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 2,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 31.26,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule(input in, output out);\n  assign out = ~in;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic bump_left,\n    input  logic bump_right,\n    input  logic ground,\n    input  logic dig,\n    output logic walk_left,\n    output logic walk_right,\n    output logic aaah,\n    output logic digging\n);\n\n    typedef enum logic [2:0] {\n        WL, WR, FL, FR, DL, DR, SPLAT\n    } state_t;\n\n    state_t state, next;\n    logic [4:0] fall_cnt;\n\n    always_comb begin\n        next = state;\n        case (state)\n            WL: begin\n                if (!ground)          next = FL;\n                else if (dig)         next = DL;\n                else if (bump_left)   next = WR;\n            end\n            WR: begin\n                if (!ground)          next = FR;\n                else if (dig)         next = DR;\n                else if (bump_right)  next = WL;\n            end\n            FL: if (ground) next = (fall_cnt > 20) ? SPLAT : WL;\n            FR: if (ground) next = (fall_cnt > 20) ? SPLAT : WR;\n            DL: if (!ground) next = FL;\n            DR: if (!ground) next = FR;\n            default: next = SPLAT;\n        endcase\n    end\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) begin\n            state    <= WL;\n            fall_cnt <= '0;\n        end else begin\n            state <= next;\n            if (state == FL || state == FR) begin\n                if (fall_cnt < 21) fall_cnt <= fall_cnt + 5'd1;\n            end else begin\n                fall_cnt <= '0;\n            end\n        end\n    end\n\n    assign walk_left  = (state == WL);\n    assign walk_right = (state == WR);\n    assign aaah       = (state == FL) || (state == FR);\n    assign digging    = (state == DL) || (state == DR);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-9zgpbpod/candidate.sv:34: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-9zgpbpod/candidate.sv:35: error: This assignment requires an explicit cast.\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic bump_left,\n    input  logic bump_right,\n    input  logic ground,\n    input  logic dig,\n    output logic walk_left,\n    output logic walk_right,\n    output logic aaah,\n    output logic digging\n);\n\n    typedef enum logic [2:0] {\n        WL, WR, FL, FR, DL, DR, SPLAT\n    } state_t;\n\n    state_t state, next;\n    logic [4:0] fall_cnt;\n\n    always_comb begin\n        next = state;\n        case (state)\n            WL: begin\n                if (!ground)          next = FL;\n                else if (dig)         next = DL;\n                else if (bump_left)   next = WR;\n            end\n            WR: begin\n                if (!ground)          next = FR;\n                else if (dig)         next = DR;\n                else if (bump_right)  next = WL;\n            end\n            FL: if (ground) begin\n                    if (fall_cnt > 20) next = SPLAT;\n                    else               next = WL;\n                end\n            FR: if (ground) begin\n                    if (fall_cnt > 20) next = SPLAT;\n                    else               next = WR;\n                end\n            DL: if (!ground) next = FL;\n            DR: if (!ground) next = FR;\n            default: next = SPLAT;\n        endcase\n    end\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) begin\n            state    <= WL;\n            fall_cnt <= '0;\n        end else begin\n            state <= next;\n            if (state == FL || state == FR) begin\n                if (fall_cnt < 21) fall_cnt <= fall_cnt + 5'd1;\n            end else begin\n                fall_cnt <= '0;\n            end\n        end\n    end\n\n    assign walk_left  = (state == WL);\n    assign walk_right = (state == WR);\n    assign aaah       = (state == FL) || (state == FR);\n    assign digging    = (state == DL) || (state == DR);\n\nendmodule",
+          "judge": {
+            "status": "wrong_output",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-1pocri5p/test.sv:158: $finish called at 5016 (1ps)\nHint: Output 'walk_left' has 12 mismatches. First mismatch occurred at time 580.\nHint: Output 'walk_right' has 32 mismatches. First mismatch occurred at time 600.\nHint: Output 'aaah' has 10 mismatches. First mismatch occurred at time 690.\nHint: Output 'digging' has 22 mismatches. First mismatch occurred at time 620.\nHint: Total mismatched samples is 76 out of 1003 samples\n\nSimulation finished at 5016 ps\nMismatches: 76 in 1003 samples"
+          }
+        },
+        {
+          "attempt": 2,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic bump_left,\n    input  logic bump_right,\n    input  logic ground,\n    input  logic dig,\n    output logic walk_left,\n    output logic walk_right,\n    output logic aaah,\n    output logic digging\n);\n\n    typedef enum logic [2:0] {\n        WL, WR, FL, FR, DL, DR, SPLAT\n    } state_t;\n\n    state_t state, next;\n    logic [4:0] fall_cnt;\n\n    always_comb begin\n        next = state;\n        case (state)\n            WL: begin\n                if (!ground)          next = FL;\n                else if (dig)         next = DL;\n                else if (bump_left)   next = WR;\n            end\n            WR: begin\n                if (!ground)          next = FR;\n                else if (dig)         next = DR;\n                else if (bump_right)  next = WL;\n            end\n            FL: if (ground) begin\n                    if (fall_cnt >= 20) next = SPLAT;\n                    else                next = WL;\n                end\n            FR: if (ground) begin\n                    if (fall_cnt >= 20) next = SPLAT;\n                    else                next = WR;\n                end\n            DL: if (!ground) next = FL;\n            DR: if (!ground) next = FR;\n            default: next = SPLAT;\n        endcase\n    end\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) begin\n            state    <= WL;\n            fall_cnt <= '0;\n        end else begin\n            state <= next;\n            if (state == FL || state == FR) begin\n                if (fall_cnt < 21) fall_cnt <= fall_cnt + 5'd1;\n            end else begin\n                fall_cnt <= '0;\n            end\n        end\n    end\n\n    assign walk_left  = (state == WL);\n    assign walk_right = (state == WR);\n    assign aaah       = (state == FL) || (state == FR);\n    assign digging    = (state == DL) || (state == DR);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-qy3f2wd_/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-q0g3ow0h/test.sv:158: $finish called at 5016 (1ps)\nHint: Output 'walk_left' has no mismatches.\nHint: Output 'walk_right' has no mismatches.\nHint: Output 'aaah' has no mismatches.\nHint: Output 'digging' has no mismatches.\nHint: Total mismatched samples is 0 out of 1003 samples\n\nSimulation finished at 5016 ps\nMismatches: 0 in 1003 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob006",
-      "title": "vectorr",
-      "trial": 1,
+      "problem_id": "Prob148",
+      "title": "2013 q2afsm",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.021,
-      "initial_response_cached": true,
+      "elapsed_seconds": 12.211,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic [7:0] in,\n    output logic [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input resetn,\n    input [2:0] r,\n    output [2:0] g\n);\n\n    localparam [1:0] A = 2'd0,\n                     B = 2'd1,\n                     C = 2'd2,\n                     D = 2'd3;\n\n    reg [1:0] state;\n    reg [1:0] next_state;\n\n    always @(*) begin\n        case (state)\n            A: begin\n                if (r[0])\n                    next_state = B;\n                else if (r[1])\n                    next_state = C;\n                else if (r[2])\n                    next_state = D;\n                else\n                    next_state = A;\n            end\n            B: next_state = r[0] ? B : A;\n            C: next_state = r[1] ? C : A;\n            D: next_state = r[2] ? D : A;\n            default: next_state = A;\n        endcase\n    end\n\n    always @(posedge clk) begin\n        if (!resetn)\n            state <= A;\n        else\n            state <= next_state;\n    end\n\n    assign g[0] = (state == B);\n    assign g[1] = (state == C);\n    assign g[2] = (state == D);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-re55fulv/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lxf6zjjy/test.sv:93: $finish called at 5271 (1ps)\nHint: Output 'g' has no mismatches.\nHint: Total mismatched samples is 0 out of 1054 samples\n\nSimulation finished at 5271 ps\nMismatches: 0 in 1054 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob007",
-      "title": "wire",
-      "trial": 1,
+      "problem_id": "Prob153",
+      "title": "gshare",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 14.504,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       areset,\n    input  logic       predict_valid,\n    input  logic [6:0] predict_pc,\n    output logic       predict_taken,\n    output logic [6:0] predict_history,\n    input  logic       train_valid,\n    input  logic       train_taken,\n    input  logic       train_mispredicted,\n    input  logic [6:0] train_history,\n    input  logic [6:0] train_pc\n);\n    logic [6:0] ghr;\n    logic [1:0] pht [0:127];\n\n    wire [6:0] predict_index = predict_pc ^ ghr;\n    wire [6:0] train_index   = train_pc ^ train_history;\n\n    assign predict_taken   = pht[predict_index][1];\n    assign predict_history = ghr;\n\n    integer i;\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) begin\n            ghr <= 7'd0;\n            for (i = 0; i < 128; i = i + 1)\n                pht[i] <= 2'b01;\n        end else begin\n            if (train_valid) begin\n                if (train_taken && pht[train_index] != 2'b11)\n                    pht[train_index] <= pht[train_index] + 2'b01;\n                else if (!train_taken && pht[train_index] != 2'b00)\n                    pht[train_index] <= pht[train_index] - 2'b01;\n            end\n\n            if (train_valid && train_mispredicted)\n                ghr <= {train_history[5:0], train_taken};\n            else if (predict_valid)\n                ghr <= {ghr[5:0], predict_taken};\n        end\n    end\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-8tyvr5o4/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-iizs4d99/test.sv:161: $finish called at 5416 (1ps)\nHint: Output 'predict_taken' has no mismatches.\nHint: Output 'predict_history' has no mismatches.\nHint: Total mismatched samples is 0 out of 1083 samples\n\nSimulation finished at 5416 ps\nMismatches: 0 in 1083 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob008",
-      "title": "m2014 q4h",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob133",
+      "title": "2014 q3fsm",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 38.376,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "candidate": "module TopModule (\n  input  logic clk,\n  input  logic reset,\n  input  logic s,\n  input  logic w,\n  output logic z\n);\n\n  typedef enum logic [2:0] {A, B, C0, C1, D0, D1, D2, Z} state_t;\n\n  state_t state, next_state;\n\n  always_comb begin\n    case (state)\n      A:       next_state = s ? B : A;\n      B:       next_state = w ? C1 : C0;\n      C0:      next_state = w ? D1 : D0;\n      C1:      next_state = w ? D2 : D1;\n      D0:      next_state = B;\n      D1:      next_state = w ? Z : B;\n      D2:      next_state = w ? B : Z;\n      Z:       next_state = w ? C1 : C0;\n      default: next_state = A;\n    endcase\n  end\n\n  always_ff @(posedge clk) begin\n    if (reset)\n      state <= A;\n    else\n      state <= next_state;\n  end\n\n  assign z = (state == Z);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:15: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:16: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:17: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:18: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:20: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:21: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j45j24lf/candidate.sv:22: error: This assignment requires an explicit cast.\n7 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n  input  logic clk,\n  input  logic reset,\n  input  logic s,\n  input  logic w,\n  output logic z\n);\n\n  localparam logic [3:0] A = 4'd0, B = 4'd1, C0 = 4'd2, C1 = 4'd3,\n                         D0 = 4'd4, D1 = 4'd5, D2 = 4'd6, Z = 4'd7;\n\n  logic [3:0] state, next_state;\n\n  always_comb begin\n    case (state)\n      A:       next_state = s ? B : A;\n      B:       next_state = w ? C1 : C0;\n      C0:      next_state = w ? D1 : D0;\n      C1:      next_state = w ? D2 : D1;\n      D0:      next_state = B;\n      D1:      next_state = w ? Z : B;\n      D2:      next_state = w ? B : Z;\n      Z:       next_state = w ? C1 : C0;\n      default: next_state = A;\n    endcase\n  end\n\n  always_ff @(posedge clk) begin\n    if (reset)\n      state <= A;\n    else\n      state <= next_state;\n  end\n\n  assign z = (state == Z);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-pbknuwqk/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-h4z6y63v/test.sv:59: $finish called at 7071 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 1414 samples\n\nSimulation finished at 7071 ps\nMismatches: 0 in 1414 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob009",
-      "title": "popcount3",
-      "trial": 1,
+      "problem_id": "Prob152",
+      "title": "lemmings3",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.031,
-      "initial_response_cached": true,
+      "elapsed_seconds": 12.131,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic [2:0] in,\n    output logic [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  areset,\n    input  bump_left,\n    input  bump_right,\n    input  ground,\n    input  dig,\n    output walk_left,\n    output walk_right,\n    output aaah,\n    output digging\n);\n\n    localparam LEFT = 3'd0, RIGHT = 3'd1, FALL_L = 3'd2, FALL_R = 3'd3, DIG_L = 3'd4, DIG_R = 3'd5;\n\n    reg [2:0] state, next;\n\n    always @(posedge clk or posedge areset) begin\n        if (areset)\n            state <= LEFT;\n        else\n            state <= next;\n    end\n\n    always @(*) begin\n        case (state)\n            LEFT:    next = !ground ? FALL_L : dig ? DIG_L : bump_left  ? RIGHT  : LEFT;\n            RIGHT:   next = !ground ? FALL_R : dig ? DIG_R : bump_right ? LEFT   : RIGHT;\n            FALL_L:  next = ground ? LEFT : FALL_L;\n            FALL_R:  next = ground ? RIGHT : FALL_R;\n            DIG_L:   next = !ground ? FALL_L : DIG_L;\n            DIG_R:   next = !ground ? FALL_R : DIG_R;\n            default: next = LEFT;\n        endcase\n    end\n\n    assign walk_left  = (state == LEFT);\n    assign walk_right = (state == RIGHT);\n    assign aaah       = (state == FALL_L) || (state == FALL_R);\n    assign digging    = (state == DIG_L) || (state == DIG_R);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-g_s1jjpl/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-kvo1h1ol/test.sv:94: $finish called at 2216 (1ps)\nHint: Output 'walk_left' has no mismatches.\nHint: Output 'walk_right' has no mismatches.\nHint: Output 'aaah' has no mismatches.\nHint: Output 'digging' has no mismatches.\nHint: Total mismatched samples is 0 out of 443 samples\n\nSimulation finished at 2216 ps\nMismatches: 0 in 443 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob010",
-      "title": "mt2015 q4a",
-      "trial": 1,
+      "problem_id": "Prob139",
+      "title": "2013 q2bfsm",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.024,
-      "initial_response_cached": true,
+      "elapsed_seconds": 32.641,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  x,\n    input  y,\n    output z\n);\n    assign z = (x ^ y) & x;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic resetn,\n    input  logic x,\n    input  logic y,\n    output logic f,\n    output logic g\n);\n    localparam logic [3:0] S_A  = 4'd0;\n    localparam logic [3:0] S_B  = 4'd1;\n    localparam logic [3:0] S_C  = 4'd2;\n    localparam logic [3:0] S_D  = 4'd3;\n    localparam logic [3:0] S_E  = 4'd4;\n    localparam logic [3:0] S_F  = 4'd5;\n    localparam logic [3:0] S_G1 = 4'd6;\n    localparam logic [3:0] S_G0 = 4'd7;\n    localparam logic [3:0] S_H  = 4'd8;\n\n    logic [3:0] state, next;\n\n    always_ff @(posedge clk) begin\n        if (!resetn) state <= S_A;\n        else         state <= next;\n    end\n\n    always_comb begin\n        case (state)\n            S_A:     next = S_B;\n            S_B:     next = S_C;\n            S_C:     next = x ? S_D : S_C;\n            S_D:     next = x ? S_D : S_E;\n            S_E:     next = x ? S_F : S_C;\n            S_F:     next = y ? S_H : S_G1;\n            S_G1:    next = y ? S_H : S_G0;\n            S_G0:    next = S_G0;\n            S_H:     next = S_H;\n            default: next = S_A;\n        endcase\n    end\n\n    assign f = (state == S_B);\n    assign g = (state == S_F) || (state == S_G1) || (state == S_H);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-nttkob8i/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-1ghldhgd/test.sv:24: $finish called at 5011 (1ps)\nHint: Output 'f' has no mismatches.\nHint: Output 'g' has no mismatches.\nHint: Total mismatched samples is 0 out of 1002 samples\n\nSimulation finished at 5011 ps\nMismatches: 0 in 1002 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob011",
-      "title": "norgate",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob119",
+      "title": "fsm3",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 8.353,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a | b);\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic in,\n    output logic out\n);\n\n    typedef enum logic [1:0] {A = 2'd0, B = 2'd1, C = 2'd2, D = 2'd3} state_t;\n\n    state_t state, next_state;\n\n    always_comb begin\n        case (state)\n            A: next_state = in ? B : A;\n            B: next_state = in ? B : C;\n            C: next_state = in ? D : A;\n            D: next_state = in ? B : C;\n            default: next_state = A;\n        endcase\n    end\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset)\n            state <= A;\n        else\n            state <= next_state;\n    end\n\n    assign out = (state == D);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-o05vtbwl/candidate.sv:14: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-o05vtbwl/candidate.sv:15: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-o05vtbwl/candidate.sv:16: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-o05vtbwl/candidate.sv:17: error: This assignment requires an explicit cast.\n4 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic in,\n    output logic out\n);\n\n    localparam logic [1:0] A = 2'd0, B = 2'd1, C = 2'd2, D = 2'd3;\n\n    logic [1:0] state, next_state;\n\n    always_comb begin\n        case (state)\n            A: next_state = in ? B : A;\n            B: next_state = in ? B : C;\n            C: next_state = in ? D : A;\n            D: next_state = in ? B : C;\n            default: next_state = A;\n        endcase\n    end\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset)\n            state <= A;\n        else\n            state <= next_state;\n    end\n\n    assign out = (state == D);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sihsoitq/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-xdy0nj8d/test.sv:79: $finish called at 1151 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 230 samples\n\nSimulation finished at 1151 ps\nMismatches: 0 in 230 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob012",
-      "title": "xnorgate",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob142",
+      "title": "lemmings2",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 10.581,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a ^ b);\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic bump_left,\n    input  logic bump_right,\n    input  logic ground,\n    output logic walk_left,\n    output logic walk_right,\n    output logic aaah\n);\n\n    typedef enum logic [1:0] {\n        WALK_LEFT  = 2'd0,\n        WALK_RIGHT = 2'd1,\n        FALL_LEFT  = 2'd2,\n        FALL_RIGHT = 2'd3\n    } state_t;\n\n    state_t state, next_state;\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset)\n            state <= WALK_LEFT;\n        else\n            state <= next_state;\n    end\n\n    always_comb begin\n        case (state)\n            WALK_LEFT:  next_state = !ground ? FALL_LEFT  : (bump_left  ? WALK_RIGHT : WALK_LEFT);\n            WALK_RIGHT: next_state = !ground ? FALL_RIGHT : (bump_right ? WALK_LEFT  : WALK_RIGHT);\n            FALL_LEFT:  next_state = ground ? WALK_LEFT  : FALL_LEFT;\n            FALL_RIGHT: next_state = ground ? WALK_RIGHT : FALL_RIGHT;\n            default:    next_state = WALK_LEFT;\n        endcase\n    end\n\n    assign walk_left  = (state == WALK_LEFT);\n    assign walk_right = (state == WALK_RIGHT);\n    assign aaah       = (state == FALL_LEFT) || (state == FALL_RIGHT);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gnitbg3x/candidate.sv:30: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gnitbg3x/candidate.sv:31: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gnitbg3x/candidate.sv:32: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gnitbg3x/candidate.sv:33: error: This assignment requires an explicit cast.\n4 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic bump_left,\n    input  logic bump_right,\n    input  logic ground,\n    output logic walk_left,\n    output logic walk_right,\n    output logic aaah\n);\n\n    localparam logic [1:0] WALK_LEFT  = 2'd0,\n                           WALK_RIGHT = 2'd1,\n                           FALL_LEFT  = 2'd2,\n                           FALL_RIGHT = 2'd3;\n\n    logic [1:0] state, next_state;\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset)\n            state <= WALK_LEFT;\n        else\n            state <= next_state;\n    end\n\n    always_comb begin\n        next_state = state;\n        case (state)\n            WALK_LEFT:  if (!ground) next_state = FALL_LEFT;\n                        else if (bump_left) next_state = WALK_RIGHT;\n            WALK_RIGHT: if (!ground) next_state = FALL_RIGHT;\n                        else if (bump_right) next_state = WALK_LEFT;\n            FALL_LEFT:  if (ground) next_state = WALK_LEFT;\n            FALL_RIGHT: if (ground) next_state = WALK_RIGHT;\n            default:    next_state = WALK_LEFT;\n        endcase\n    end\n\n    assign walk_left  = (state == WALK_LEFT);\n    assign walk_right = (state == WALK_RIGHT);\n    assign aaah       = (state == FALL_LEFT) || (state == FALL_RIGHT);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-q1018pkk/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-a7nljjnv/test.sv:80: $finish called at 2206 (1ps)\nHint: Output 'walk_left' has no mismatches.\nHint: Output 'walk_right' has no mismatches.\nHint: Output 'aaah' has no mismatches.\nHint: Total mismatched samples is 0 out of 441 samples\n\nSimulation finished at 2206 ps\nMismatches: 0 in 441 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob013",
-      "title": "m2014 q4e",
-      "trial": 1,
+      "problem_id": "Prob100",
+      "title": "fsm3comb",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.017,
-      "initial_response_cached": true,
+      "elapsed_seconds": 9.192,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n    assign out = ~(in1 | in2);\nendmodule",
+          "candidate": "module TopModule (\n    input in,\n    input [1:0] state,\n    output reg [1:0] next_state,\n    output out\n);\n    always @(*) begin\n        case (state)\n            2'b00: next_state = in ? 2'b01 : 2'b00;\n            2'b01: next_state = in ? 2'b01 : 2'b10;\n            2'b10: next_state = in ? 2'b11 : 2'b00;\n            2'b11: next_state = in ? 2'b01 : 2'b10;\n            default: next_state = 2'b00;\n        endcase\n    end\n\n    assign out = (state == 2'b11);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-w93gq336/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-6wym4b0b/test.sv:18: $finish called at 501 (1ps)\nHint: Output 'next_state' has no mismatches.\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob014",
-      "title": "andgate",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob154",
+      "title": "fsm ps2data",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 27.847,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n  input  a,\n  input  b,\n  output out\n);\n  assign out = a & b;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic        clk,\n    input  logic        reset,\n    input  logic [7:0]  in,\n    output logic [23:0] out_bytes,\n    output logic        done\n);\n\n    typedef enum logic [1:0] {\n        BYTE1 = 2'd0,\n        BYTE2 = 2'd1,\n        BYTE3 = 2'd2,\n        DONE  = 2'd3\n    } state_t;\n\n    state_t state, next_state;\n\n    always_comb begin\n        case (state)\n            BYTE1:   next_state = in[3] ? BYTE2 : BYTE1;\n            BYTE2:   next_state = BYTE3;\n            BYTE3:   next_state = DONE;\n            DONE:    next_state = in[3] ? BYTE2 : BYTE1;\n            default: next_state = BYTE1;\n        endcase\n    end\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= BYTE1;\n        else\n            state <= next_state;\n    end\n\n    always_ff @(posedge clk) begin\n        out_bytes <= {out_bytes[15:0], in};\n    end\n\n    assign done = (state == DONE);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-6z9rmnap/candidate.sv:20: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-6z9rmnap/candidate.sv:23: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-6z9rmnap/candidate.sv:20: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'in[7:0]').\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-6z9rmnap/candidate.sv:23: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'in[7:0]').\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic        clk,\n    input  logic        reset,\n    input  logic [7:0]  in,\n    output logic [23:0] out_bytes,\n    output logic        done\n);\n\n    localparam logic [1:0] BYTE1 = 2'd0;\n    localparam logic [1:0] BYTE2 = 2'd1;\n    localparam logic [1:0] BYTE3 = 2'd2;\n    localparam logic [1:0] DONE  = 2'd3;\n\n    logic [1:0] state, next_state;\n    logic       in3;\n\n    assign in3 = in[3];\n\n    always_comb begin\n        case (state)\n            BYTE1:   next_state = in3 ? BYTE2 : BYTE1;\n            BYTE2:   next_state = BYTE3;\n            BYTE3:   next_state = DONE;\n            DONE:    next_state = in3 ? BYTE2 : BYTE1;\n            default: next_state = BYTE1;\n        endcase\n    end\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= BYTE1;\n        else\n            state <= next_state;\n    end\n\n    always_ff @(posedge clk) begin\n        out_bytes <= {out_bytes[15:0], in};\n    end\n\n    assign done = (state == DONE);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2b2egk17/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-5pq2cygq/test.sv:31: $finish called at 8096 (1ps)\nHint: Output 'out_bytes' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 1619 samples\n\nSimulation finished at 8096 ps\nMismatches: 0 in 1619 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob015",
-      "title": "vector1",
-      "trial": 1,
-      "one_shot_status": "pass",
+      "problem_id": "Prob129",
+      "title": "ece241 2013 q8",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 9.963,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic aresetn,\n    input  logic x,\n    output logic z\n);\n    typedef enum logic [1:0] {S0 = 2'd0, S1 = 2'd1, S2 = 2'd2} state_t;\n    state_t state, next_state;\n\n    always_ff @(posedge clk or negedge aresetn) begin\n        if (!aresetn) state <= S0;\n        else          state <= next_state;\n    end\n\n    always_comb begin\n        next_state = S0;\n        case (state)\n            S0: next_state = x ? S1 : S0;\n            S1: next_state = x ? S1 : S2;\n            S2: next_state = x ? S1 : S0;\n            default: next_state = S0;\n        endcase\n    end\n\n    assign z = (state == S2) && x;\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-y2dlomgh/candidate.sv:18: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-y2dlomgh/candidate.sv:19: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-y2dlomgh/candidate.sv:20: error: This assignment requires an explicit cast.\n3 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic aresetn,\n    input  logic x,\n    output logic z\n);\n    localparam logic [1:0] S0 = 2'd0, S1 = 2'd1, S2 = 2'd2;\n    logic [1:0] state, next_state;\n\n    always_ff @(posedge clk or negedge aresetn) begin\n        if (!aresetn) state <= S0;\n        else          state <= next_state;\n    end\n\n    always_comb begin\n        next_state = S0;\n        case (state)\n            S0: next_state = x ? S1 : S0;\n            S1: next_state = x ? S1 : S2;\n            S2: next_state = x ? S1 : S0;\n            default: next_state = S0;\n        endcase\n    end\n\n    assign z = (state == S2) && x;\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-tpm1u3oe/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-bblli1fj/test.sv:86: $finish called at 2200 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 440 samples\n\nSimulation finished at 2200 ps\nMismatches: 0 in 440 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob001",
-      "title": "zero",
-      "trial": 2,
-      "one_shot_status": "pass",
+      "problem_id": "Prob120",
+      "title": "fsm3s",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 8.456,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    input in,\n    output out\n);\n    typedef enum logic [1:0] {A = 2'd0, B = 2'd1, C = 2'd2, D = 2'd3} state_t;\n    state_t state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= A;\n        else\n            state <= next_state;\n    end\n\n    always_comb begin\n        case (state)\n            A: next_state = in ? B : A;\n            B: next_state = in ? B : C;\n            C: next_state = in ? D : A;\n            D: next_state = in ? B : C;\n            default: next_state = A;\n        endcase\n    end\n\n    assign out = (state == D);\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j1pglyak/candidate.sv:19: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j1pglyak/candidate.sv:20: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j1pglyak/candidate.sv:21: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j1pglyak/candidate.sv:22: error: This assignment requires an explicit cast.\n4 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    input in,\n    output out\n);\n    localparam logic [1:0] A = 2'd0, B = 2'd1, C = 2'd2, D = 2'd3;\n    logic [1:0] state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= A;\n        else\n            state <= next_state;\n    end\n\n    always_comb begin\n        case (state)\n            A: next_state = in ? B : A;\n            B: next_state = in ? B : C;\n            C: next_state = in ? D : A;\n            D: next_state = in ? B : C;\n            default: next_state = A;\n        endcase\n    end\n\n    assign out = (state == D);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-46at0g_c/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-d9s8gqv2/test.sv:77: $finish called at 1151 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 230 samples\n\nSimulation finished at 1151 ps\nMismatches: 0 in 230 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob002",
-      "title": "m2014 q4i",
-      "trial": 2,
-      "one_shot_status": "pass",
+      "problem_id": "Prob140",
+      "title": "fsm hdlc",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.017,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 15.29,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output out\n);\n    assign out = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic in,\n    output logic disc,\n    output logic flag,\n    output logic err\n);\n\n    typedef enum logic [3:0] {\n        NONE, ONE, TWO, THREE, FOUR, FIVE, SIX, DISC, FLAG, ERR\n    } state_t;\n\n    state_t state, next;\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= NONE;\n        else\n            state <= next;\n    end\n\n    always_comb begin\n        case (state)\n            NONE:    next = in ? ONE  : NONE;\n            ONE:     next = in ? TWO  : NONE;\n            TWO:     next = in ? THREE : NONE;\n            THREE:   next = in ? FOUR : NONE;\n            FOUR:    next = in ? FIVE : NONE;\n            FIVE:    next = in ? SIX  : DISC;\n            SIX:     next = in ? ERR  : FLAG;\n            DISC:    next = in ? ONE  : NONE;\n            FLAG:    next = in ? ONE  : NONE;\n            ERR:     next = in ? ERR  : NONE;\n            default: next = NONE;\n        endcase\n    end\n\n    assign disc = (state == DISC);\n    assign flag = (state == FLAG);\n    assign err  = (state == ERR);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:25: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:26: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:27: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:28: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:29: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:30: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:31: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:32: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:33: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ai29wx5i/candidate.sv:34: error: This assignment requires an explicit cast.\n10 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic in,\n    output logic disc,\n    output logic flag,\n    output logic err\n);\n\n    typedef enum logic [3:0] {\n        NONE, ONE, TWO, THREE, FOUR, FIVE, SIX, DISC, FLAG, ERR\n    } state_t;\n\n    state_t state, next;\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= NONE;\n        else\n            state <= next;\n    end\n\n    always_comb begin\n        case (state)\n            NONE:    next = state_t'(in ? ONE   : NONE);\n            ONE:     next = state_t'(in ? TWO   : NONE);\n            TWO:     next = state_t'(in ? THREE : NONE);\n            THREE:   next = state_t'(in ? FOUR  : NONE);\n            FOUR:    next = state_t'(in ? FIVE  : NONE);\n            FIVE:    next = state_t'(in ? SIX   : DISC);\n            SIX:     next = state_t'(in ? ERR   : FLAG);\n            DISC:    next = state_t'(in ? ONE   : NONE);\n            FLAG:    next = state_t'(in ? ONE   : NONE);\n            ERR:     next = state_t'(in ? ERR   : NONE);\n            default: next = NONE;\n        endcase\n    end\n\n    assign disc = (state == DISC);\n    assign flag = (state == FLAG);\n    assign err  = (state == ERR);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-l9w5loes/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-wiwsqbhz/test.sv:20: $finish called at 4006 (1ps)\nHint: Output 'disc' has no mismatches.\nHint: Output 'flag' has no mismatches.\nHint: Output 'err' has no mismatches.\nHint: Total mismatched samples is 0 out of 801 samples\n\nSimulation finished at 4006 ps\nMismatches: 0 in 801 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob003",
-      "title": "step one",
-      "trial": 2,
-      "one_shot_status": "pass",
+      "problem_id": "Prob127",
+      "title": "lemmings1",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.017,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 8.125,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "candidate": "module TopModule (\n  input  logic clk,\n  input  logic areset,\n  input  logic bump_left,\n  input  logic bump_right,\n  output logic walk_left,\n  output logic walk_right\n);\n  typedef enum logic {LEFT = 1'b0, RIGHT = 1'b1} state_t;\n  state_t state;\n\n  always_ff @(posedge clk or posedge areset) begin\n    if (areset)\n      state <= LEFT;\n    else if (state == LEFT)\n      state <= bump_left ? RIGHT : LEFT;\n    else\n      state <= bump_right ? LEFT : RIGHT;\n  end\n\n  assign walk_left  = (state == LEFT);\n  assign walk_right = (state == RIGHT);\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r0csrc65/candidate.sv:16: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r0csrc65/candidate.sv:18: error: This assignment requires an explicit cast.\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n  input  logic clk,\n  input  logic areset,\n  input  logic bump_left,\n  input  logic bump_right,\n  output logic walk_left,\n  output logic walk_right\n);\n  logic state;\n\n  always_ff @(posedge clk or posedge areset) begin\n    if (areset)\n      state <= 1'b0;\n    else if (state == 1'b0)\n      state <= bump_left;\n    else\n      state <= ~bump_right;\n  end\n\n  assign walk_left  = ~state;\n  assign walk_right = state;\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-w_06_h2r/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-nqenk2n2/test.sv:73: $finish called at 1146 (1ps)\nHint: Output 'walk_left' has no mismatches.\nHint: Output 'walk_right' has no mismatches.\nHint: Total mismatched samples is 0 out of 229 samples\n\nSimulation finished at 1146 ps\nMismatches: 0 in 229 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob004",
-      "title": "vector2",
-      "trial": 2,
+      "problem_id": "Prob138",
+      "title": "2012 q2fsm",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.017,
-      "initial_response_cached": true,
+      "elapsed_seconds": 8.339,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [31:0] in,\n    output [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  reset,\n    input  w,\n    output z\n);\n    localparam [2:0] A = 3'd0, B = 3'd1, C = 3'd2, D = 3'd3, E = 3'd4, F = 3'd5;\n\n    reg [2:0] state, next_state;\n\n    always @(*) begin\n        case (state)\n            A: next_state = w ? B : A;\n            B: next_state = w ? C : D;\n            C: next_state = w ? E : D;\n            D: next_state = w ? F : A;\n            E: next_state = w ? E : D;\n            F: next_state = w ? C : D;\n            default: next_state = A;\n        endcase\n    end\n\n    always @(posedge clk) begin\n        if (reset) state <= A;\n        else       state <= next_state;\n    end\n\n    assign z = (state == E) || (state == F);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-hs18azy4/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-0j0fjaaf/test.sv:18: $finish called at 2001 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 400 samples\n\nSimulation finished at 2001 ps\nMismatches: 0 in 400 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob005",
-      "title": "notgate",
-      "trial": 2,
+      "problem_id": "Prob080",
+      "title": "timer",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.86,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic in,\n    output logic out\n);\n    assign out = ~in;\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input load,\n    input [9:0] data,\n    output tc\n);\n\n    reg [9:0] count;\n\n    always @(posedge clk) begin\n        if (load)\n            count <= data;\n        else if (count != 10'd0)\n            count <= count - 10'd1;\n    end\n\n    assign tc = (count == 10'd0);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-uz_siqmm/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-yo4pnugk/test.sv:55: $finish called at 35636 (1ps)\nHint: Output 'tc' has no mismatches.\nHint: Total mismatched samples is 0 out of 7127 samples\n\nSimulation finished at 35636 ps\nMismatches: 0 in 7127 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob006",
-      "title": "vectorr",
-      "trial": 2,
+      "problem_id": "Prob091",
+      "title": "2012 q2b",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 7.875,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [7:0] in,\n    output [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "candidate": "module TopModule (\n    input [5:0] y,\n    input w,\n    output Y1,\n    output Y3\n);\n\n    assign Y1 = y[0] & w;\n    assign Y3 = (y[1] | y[2] | y[4] | y[5]) & ~w;\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-7imtfrak/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-1z4z0nl_/test.sv:45: $finish called at 3001 (1ps)\nHint: Output 'Y1' has no mismatches.\nHint: Output 'Y3' has no mismatches.\nHint: Total mismatched samples is 0 out of 600 samples\n\nSimulation finished at 3001 ps\nMismatches: 0 in 600 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob007",
-      "title": "wire",
-      "trial": 2,
+      "problem_id": "Prob121",
+      "title": "2014 q3bfsm",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 8.783,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "candidate": "module TopModule (\n  input  logic clk,\n  input  logic reset,\n  input  logic x,\n  output logic z\n);\n\n  logic [2:0] y;\n\n  always_ff @(posedge clk) begin\n    if (reset) begin\n      y <= 3'b000;\n    end else begin\n      case (y)\n        3'b000: y <= x ? 3'b001 : 3'b000;\n        3'b001: y <= x ? 3'b100 : 3'b001;\n        3'b010: y <= x ? 3'b001 : 3'b010;\n        3'b011: y <= x ? 3'b010 : 3'b001;\n        3'b100: y <= x ? 3'b100 : 3'b011;\n        default: y <= 3'b000;\n      endcase\n    end\n  end\n\n  assign z = (y == 3'b011) || (y == 3'b100);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-udz7o9jz/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-n245ad32/test.sv:26: $finish called at 5031 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 1006 samples\n\nSimulation finished at 5031 ps\nMismatches: 0 in 1006 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob008",
-      "title": "m2014 q4h",
-      "trial": 2,
+      "problem_id": "Prob079",
+      "title": "fsm3onehot",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 8.345,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n  input  logic in,\n  output logic out\n);\n\n  assign out = in;\n\nendmodule",
+          "candidate": "module TopModule (\n    input  in,\n    input  [3:0] state,\n    output [3:0] next_state,\n    output out\n);\n    assign next_state[0] = ~in & (state[0] | state[2]);\n    assign next_state[1] = in & (state[0] | state[1] | state[3]);\n    assign next_state[2] = ~in & (state[1] | state[3]);\n    assign next_state[3] = in & state[2];\n    assign out = state[3];\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-1mgpy4bg/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-jwif0ekn/test.sv:20: $finish called at 1001 (1ps)\nHint: Output 'next_state' has no mismatches.\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 200 samples\n\nSimulation finished at 1001 ps\nMismatches: 0 in 200 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob009",
-      "title": "popcount3",
-      "trial": 2,
-      "one_shot_status": "pass",
+      "problem_id": "Prob096",
+      "title": "review2015 fsmseq",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 9.916,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic [2:0] in,\n    output logic [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    output logic start_shifting\n);\n    typedef enum logic [2:0] {S0, S1, S2, S3, S4} state_t;\n    state_t state, next;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S0;\n        else       state <= next;\n    end\n\n    always_comb begin\n        case (state)\n            S0: next = data ? S1 : S0;\n            S1: next = data ? S2 : S0;\n            S2: next = data ? S2 : S3;\n            S3: next = data ? S4 : S0;\n            S4: next = S4;\n            default: next = S0;\n        endcase\n    end\n\n    assign start_shifting = (state == S4);\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-splbprc9/candidate.sv:17: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-splbprc9/candidate.sv:18: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-splbprc9/candidate.sv:19: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-splbprc9/candidate.sv:20: error: This assignment requires an explicit cast.\n4 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    output logic start_shifting\n);\n    localparam logic [2:0] S0 = 3'd0, S1 = 3'd1, S2 = 3'd2, S3 = 3'd3, S4 = 3'd4;\n    logic [2:0] state, next;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S0;\n        else       state <= next;\n    end\n\n    always_comb begin\n        case (state)\n            S0: next = data ? S1 : S0;\n            S1: next = data ? S2 : S0;\n            S2: next = data ? S2 : S3;\n            S3: next = data ? S4 : S0;\n            S4: next = S4;\n            default: next = S0;\n        endcase\n    end\n\n    assign start_shifting = (state == S4);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-14om1lc3/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-f0ua88qr/test.sv:74: $finish called at 3216 (1ps)\nHint: Output 'start_shifting' has no mismatches.\nHint: Total mismatched samples is 0 out of 643 samples\n\nSimulation finished at 3216 ps\nMismatches: 0 in 643 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob010",
-      "title": "mt2015 q4a",
-      "trial": 2,
+      "problem_id": "Prob095",
+      "title": "review2015 fsmshift",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 10.077,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  wire x,\n    input  wire y,\n    output wire z\n);\n    assign z = (x ^ y) & x;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    output logic shift_ena\n);\n    logic [2:0] count;\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            count <= 3'd0;\n        else if (!count[2])\n            count <= count + 3'd1;\n    end\n\n    assign shift_ena = !count[2];\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-_jc3zau4/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r70nnzg_/test.sv:17: $finish called at 1001 (1ps)\nHint: Output 'shift_ena' has no mismatches.\nHint: Total mismatched samples is 0 out of 200 samples\n\nSimulation finished at 1001 ps\nMismatches: 0 in 200 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob011",
-      "title": "norgate",
-      "trial": 2,
+      "problem_id": "Prob089",
+      "title": "ece241 2014 q5a",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.022,
-      "initial_response_cached": true,
+      "elapsed_seconds": 18.784,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n  input  a,\n  input  b,\n  output out\n);\n  assign out = ~(a | b);\nendmodule",
+          "candidate": "module TopModule (\n  input clk,\n  input areset,\n  input x,\n  output z\n);\n  reg [1:0] state;\n  always @(posedge clk or posedge areset) begin\n    if (areset) state <= 2'b00;\n    else state <= {state[1] | x, x ^ state[1]};\n  end\n  assign z = state[0];\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2yiktmx5/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-24hj54qg/test.sv:73: $finish called at 2180 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 436 samples\n\nSimulation finished at 2180 ps\nMismatches: 0 in 436 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob012",
-      "title": "xnorgate",
-      "trial": 2,
+      "problem_id": "Prob135",
+      "title": "m2014 q6b",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.036,
-      "initial_response_cached": true,
+      "elapsed_seconds": 13.091,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a ^ b);\nendmodule",
+          "candidate": "module TopModule (\n    input [2:0] y,\n    input w,\n    output Y1\n);\n    assign Y1 = (~y[1] & y[0]) | (w & ~y[0] & (y[1] ^ y[2]));\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-l77mthut/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-z_1ntfcz/test.sv:17: $finish called at 501 (1ps)\nHint: Output 'Y1' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob013",
-      "title": "m2014 q4e",
-      "trial": 2,
+      "problem_id": "Prob110",
+      "title": "fsm2",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.034,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.907,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n\n    assign out = ~(in1 | in2);\n\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic j,\n    input  logic k,\n    output logic out\n);\n    logic state;\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) state <= 1'b0;\n        else        state <= state ? ~k : j;\n    end\n\n    assign out = state;\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gulz8pao/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-kk8ryhjg/test.sv:74: $finish called at 1206 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 241 samples\n\nSimulation finished at 1206 ps\nMismatches: 0 in 241 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob014",
-      "title": "andgate",
-      "trial": 2,
-      "one_shot_status": "pass",
+      "problem_id": "Prob146",
+      "title": "fsm serialdata",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.027,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 17.658,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = a & b;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       in,\n    input  logic       reset,\n    output logic [7:0] out_byte,\n    output logic       done\n);\n\n    typedef enum logic [2:0] {IDLE, DATA, STOP, DONE, WAIT} state_t;\n\n    state_t     state;\n    logic [2:0] cnt;\n    logic [7:0] shreg;\n\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            state <= IDLE;\n            cnt   <= '0;\n            shreg <= '0;\n        end else begin\n            case (state)\n                IDLE: if (!in) state <= DATA;\n                DATA: begin\n                    shreg <= {in, shreg[7:1]};\n                    cnt   <= cnt + 3'd1;\n                    if (cnt == 3'd7) state <= STOP;\n                end\n                STOP: state <= in ? DONE : WAIT;\n                DONE: state <= in ? IDLE : DATA;\n                WAIT: if (in) state <= IDLE;\n                default: state <= IDLE;\n            endcase\n        end\n    end\n\n    assign out_byte = shreg;\n    assign done     = (state == DONE);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sofnl3y1/candidate.sv:28: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sofnl3y1/candidate.sv:29: error: This assignment requires an explicit cast.\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       in,\n    input  logic       reset,\n    output logic [7:0] out_byte,\n    output logic       done\n);\n\n    typedef enum logic [2:0] {IDLE, DATA, STOP, DONE, WAIT} state_t;\n\n    state_t     state;\n    logic [2:0] cnt;\n    logic [7:0] shreg;\n\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            state <= IDLE;\n            cnt   <= '0;\n            shreg <= '0;\n        end else begin\n            case (state)\n                IDLE: if (!in) state <= DATA;\n                DATA: begin\n                    shreg <= {in, shreg[7:1]};\n                    cnt   <= cnt + 3'd1;\n                    if (cnt == 3'd7) state <= STOP;\n                end\n                STOP: begin\n                    if (in) state <= DONE;\n                    else    state <= WAIT;\n                end\n                DONE: begin\n                    if (in) state <= IDLE;\n                    else    state <= DATA;\n                end\n                WAIT: if (in) state <= IDLE;\n                default: state <= IDLE;\n            endcase\n        end\n    end\n\n    assign out_byte = shreg;\n    assign done     = (state == DONE);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gy9unrdn/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-s0proa02/test.sv:45: $finish called at 4526 (1ps)\nHint: Output 'out_byte' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 905 samples\n\nSimulation finished at 4526 ps\nMismatches: 0 in 905 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob015",
-      "title": "vector1",
-      "trial": 2,
+      "problem_id": "Prob088",
+      "title": "ece241 2014 q5b",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.02,
-      "initial_response_cached": true,
+      "elapsed_seconds": 11.203,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic areset,\n    input  logic x,\n    output logic z\n);\n    logic sA, sB;\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset) begin\n            sA <= 1'b1;\n            sB <= 1'b0;\n        end else begin\n            sA <= sA & ~x;\n            sB <= sB | (sA & x);\n        end\n    end\n\n    assign z = (sA & x) | (sB & ~x);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-zm1re5us/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-7n9s15jm/test.sv:73: $finish called at 2180 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 436 samples\n\nSimulation finished at 2180 ps\nMismatches: 0 in 436 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob001",
-      "title": "zero",
-      "trial": 3,
+      "problem_id": "Prob111",
+      "title": "fsm2s",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.018,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.304,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  reset,\n    input  j,\n    input  k,\n    output out\n);\n    localparam OFF = 1'b0;\n    localparam ON  = 1'b1;\n\n    reg state;\n\n    always @(posedge clk) begin\n        if (reset)\n            state <= OFF;\n        else if (state == OFF)\n            state <= j ? ON : OFF;\n        else\n            state <= k ? OFF : ON;\n    end\n\n    assign out = (state == ON);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ceatysu3/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ghh603kr/test.sv:72: $finish called at 1206 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 241 samples\n\nSimulation finished at 1206 ps\nMismatches: 0 in 241 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob002",
-      "title": "m2014 q4i",
-      "trial": 3,
+      "problem_id": "Prob107",
+      "title": "fsm1s",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.02,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.716,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n  output out\n);\n  assign out = 1'b0;\nendmodule",
+          "candidate": "module TopModule (\n  input  clk,\n  input  reset,\n  input  in,\n  output out\n);\n  localparam B = 1'b0;\n  localparam A = 1'b1;\n\n  reg state;\n\n  always @(posedge clk) begin\n    if (reset)\n      state <= B;\n    else if (state == B)\n      state <= in ? B : A;\n    else\n      state <= in ? A : B;\n  end\n\n  assign out = (state == B);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-hd6eruvm/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-broy71pm/test.sv:70: $finish called at 1151 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 230 samples\n\nSimulation finished at 1151 ps\nMismatches: 0 in 230 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob003",
-      "title": "step one",
-      "trial": 3,
-      "one_shot_status": "pass",
+      "problem_id": "Prob137",
+      "title": "fsm serial",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.024,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 18.38,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic in,\n    output logic done\n);\n    typedef enum logic [2:0] {IDLE, DATA, STOP, DONE, ERR} state_t;\n\n    state_t state, next;\n    logic [2:0] cnt;\n\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            state <= IDLE;\n            cnt   <= '0;\n        end else begin\n            state <= next;\n            if (state == DATA)\n                cnt <= cnt + 3'd1;\n            else\n                cnt <= '0;\n        end\n    end\n\n    always_comb begin\n        next = state;\n        case (state)\n            IDLE: if (!in) next = DATA;\n            DATA: if (cnt == 3'd7) next = STOP;\n            STOP: next = in ? DONE : ERR;\n            DONE: next = in ? IDLE : DATA;\n            ERR:  if (in) next = IDLE;\n            default: next = IDLE;\n        endcase\n    end\n\n    assign done = (state == DONE);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-v349wqx9/candidate.sv:30: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-v349wqx9/candidate.sv:31: error: This assignment requires an explicit cast.\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic in,\n    output logic done\n);\n    typedef enum logic [2:0] {IDLE, DATA, STOP, DONE, ERR} state_t;\n\n    state_t state, next;\n    logic [2:0] cnt;\n\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            state <= IDLE;\n            cnt   <= '0;\n        end else begin\n            state <= next;\n            if (state == DATA)\n                cnt <= cnt + 3'd1;\n            else\n                cnt <= '0;\n        end\n    end\n\n    always_comb begin\n        next = state;\n        case (state)\n            IDLE: if (!in) next = DATA;\n            DATA: if (cnt == 3'd7) next = STOP;\n            STOP: if (in) next = DONE;\n                  else    next = ERR;\n            DONE: if (in) next = IDLE;\n                  else    next = DATA;\n            ERR:  if (in) next = IDLE;\n            default: next = IDLE;\n        endcase\n    end\n\n    assign done = (state == DONE);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-c8aea19p/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-0iusvlma/test.sv:45: $finish called at 4526 (1ps)\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 905 samples\n\nSimulation finished at 4526 ps\nMismatches: 0 in 905 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob004",
-      "title": "vector2",
-      "trial": 3,
-      "one_shot_status": "pass",
+      "problem_id": "Prob128",
+      "title": "fsm ps2",
+      "one_shot_status": "compile_error",
       "looped_status": "pass",
-      "retry_count": 0,
-      "fixed_by_retry": false,
-      "elapsed_seconds": 0.02,
-      "initial_response_cached": true,
+      "retry_count": 1,
+      "fixed_by_retry": true,
+      "elapsed_seconds": 8.742,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [31:0] in,\n    output [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    input  logic [7:0] in,\n    output logic       done\n);\n\n    typedef enum logic [1:0] {S_BYTE1, S_BYTE2, S_BYTE3, S_DONE} state_t;\n\n    state_t state, next_state;\n\n    always_comb begin\n        case (state)\n            S_BYTE1: next_state = in[3] ? S_BYTE2 : S_BYTE1;\n            S_BYTE2: next_state = S_BYTE3;\n            S_BYTE3: next_state = S_DONE;\n            S_DONE:  next_state = in[3] ? S_BYTE2 : S_BYTE1;\n            default: next_state = S_BYTE1;\n        endcase\n    end\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= S_BYTE1;\n        else\n            state <= next_state;\n    end\n\n    assign done = (state == S_DONE);\n\nendmodule",
+          "judge": {
+            "status": "compile_error",
+            "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r615_mvr/candidate.sv:14: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r615_mvr/candidate.sv:17: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r615_mvr/candidate.sv:14: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'in[7:0]').\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r615_mvr/candidate.sv:17: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'in[7:0]').\n2 error(s) during elaboration."
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    input  logic [7:0] in,\n    output logic       done\n);\n\n    typedef enum logic [1:0] {S_BYTE1, S_BYTE2, S_BYTE3, S_DONE} state_t;\n\n    state_t state, next_state;\n    logic   start_bit;\n\n    assign start_bit = in[3];\n\n    always_comb begin\n        next_state = S_BYTE1;\n        case (state)\n            S_BYTE1: if (start_bit) next_state = S_BYTE2;\n            S_BYTE2: next_state = S_BYTE3;\n            S_BYTE3: next_state = S_DONE;\n            S_DONE:  if (start_bit) next_state = S_BYTE2;\n            default: next_state = S_BYTE1;\n        endcase\n    end\n\n    always_ff @(posedge clk) begin\n        if (reset)\n            state <= S_BYTE1;\n        else\n            state <= next_state;\n    end\n\n    assign done = (state == S_DONE);\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-fa6zdxa1/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-bmwgdcl6/test.sv:18: $finish called at 2001 (1ps)\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 400 samples\n\nSimulation finished at 2001 ps\nMismatches: 0 in 400 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob005",
-      "title": "notgate",
-      "trial": 3,
+      "problem_id": "Prob136",
+      "title": "m2014 q6",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.025,
-      "initial_response_cached": true,
+      "elapsed_seconds": 10.135,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = ~in;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic w,\n    output logic z\n);\n    localparam logic [2:0] A = 3'd0, B = 3'd1, C = 3'd2, D = 3'd3, E = 3'd4, F = 3'd5;\n\n    logic [2:0] state, next_state;\n\n    always_comb begin\n        case (state)\n            A: next_state = w ? A : B;\n            B: next_state = w ? D : C;\n            C: next_state = w ? D : E;\n            D: next_state = w ? A : F;\n            E: next_state = w ? D : E;\n            F: next_state = w ? D : C;\n            default: next_state = A;\n        endcase\n    end\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= A;\n        else       state <= next_state;\n    end\n\n    assign z = (state == E) || (state == F);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-d3_hlrtf/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-8rfjblgx/test.sv:18: $finish called at 1001 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 200 samples\n\nSimulation finished at 1001 ps\nMismatches: 0 in 200 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob006",
-      "title": "vectorr",
-      "trial": 3,
+      "problem_id": "Prob144",
+      "title": "conwaylife",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.024,
-      "initial_response_cached": true,
+      "elapsed_seconds": 13.454,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [7:0] in,\n    output [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "candidate": "module TopModule (\n    input  logic         clk,\n    input  logic         load,\n    input  logic [255:0] data,\n    output logic [255:0] q\n);\n    logic [255:0] nxt;\n\n    genvar r, c;\n    generate\n        for (r = 0; r < 16; r = r + 1) begin : g_row\n            for (c = 0; c < 16; c = c + 1) begin : g_col\n                localparam integer UP = (r + 15) % 16;\n                localparam integer DN = (r + 1) % 16;\n                localparam integer LT = (c + 15) % 16;\n                localparam integer RT = (c + 1) % 16;\n                wire [3:0] n = q[UP*16+LT] + q[UP*16+c] + q[UP*16+RT]\n                             + q[r*16+LT]                + q[r*16+RT]\n                             + q[DN*16+LT] + q[DN*16+c] + q[DN*16+RT];\n                assign nxt[r*16+c] = (n == 4'd3) | (q[r*16+c] & (n == 4'd2));\n            end\n        end\n    endgenerate\n\n    always_ff @(posedge clk) begin\n        if (load)\n            q <= data;\n        else\n            q <= nxt;\n    end\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j6tosdec/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ya_0yyg0/test.sv:96: $finish called at 25116 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 5023 samples\n\nSimulation finished at 25116 ps\nMismatches: 0 in 5023 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob007",
-      "title": "wire",
-      "trial": 3,
+      "problem_id": "Prob109",
+      "title": "fsm1",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.019,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.783,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input areset,\n    input in,\n    output out\n);\n    reg state;\n    always @(posedge clk or posedge areset) begin\n        if (areset) state <= 1'b1;\n        else if (!in) state <= ~state;\n    end\n    assign out = state;\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-x_d0d3n4/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-c4klvl9t/test.sv:71: $finish called at 1141 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 228 samples\n\nSimulation finished at 1141 ps\nMismatches: 0 in 228 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob008",
-      "title": "m2014 q4h",
-      "trial": 3,
+      "problem_id": "Prob085",
+      "title": "shift4",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.059,
-      "initial_response_cached": true,
+      "elapsed_seconds": 7.35,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       areset,\n    input  logic       load,\n    input  logic       ena,\n    input  logic [3:0] data,\n    output logic [3:0] q\n);\n\n    always_ff @(posedge clk or posedge areset) begin\n        if (areset)\n            q <= 4'b0000;\n        else if (load)\n            q <= data;\n        else if (ena)\n            q <= {1'b0, q[3:1]};\n    end\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-53y5t4zn/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sln8vobx/test.sv:76: $finish called at 2136 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 427 samples\n\nSimulation finished at 2136 ps\nMismatches: 0 in 427 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob009",
-      "title": "popcount3",
-      "trial": 3,
+      "problem_id": "Prob074",
+      "title": "ece241 2014 q4",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.026,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.898,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [2:0] in,\n    output [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  x,\n    output z\n);\n    reg q1 = 1'b0;\n    reg q2 = 1'b0;\n    reg q3 = 1'b0;\n\n    always @(posedge clk) begin\n        q1 <= x ^ q1;\n        q2 <= x & ~q2;\n        q3 <= x | ~q3;\n    end\n\n    assign z = ~(q1 | q2 | q3);\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-p2a92l6u/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-g946gucj/test.sv:42: $finish called at 590 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 118 samples\n\nSimulation finished at 590 ps\nMismatches: 0 in 118 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob010",
-      "title": "mt2015 q4a",
-      "trial": 3,
+      "problem_id": "Prob086",
+      "title": "lfsr5",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.028,
-      "initial_response_cached": true,
+      "elapsed_seconds": 10.091,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  logic x,\n    input  logic y,\n    output logic z\n);\n\n    assign z = (x ^ y) & x;\n\nendmodule",
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    output logic [4:0] q\n);\n    always_ff @(posedge clk) begin\n        if (reset)\n            q <= 5'b00001;\n        else\n            q <= {q[0], q[4], q[3] ^ q[0], q[2], q[1]};\n    end\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2p7pwz5h/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-bnr3z1ey/test.sv:65: $finish called at 22216 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4443 samples\n\nSimulation finished at 22216 ps\nMismatches: 0 in 4443 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob011",
-      "title": "norgate",
-      "trial": 3,
+      "problem_id": "Prob063",
+      "title": "review2015 shiftcount",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.021,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.725,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule(\n  input  a,\n  input  b,\n  output out\n);\n  assign out = ~(a | b);\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input shift_ena,\n    input count_ena,\n    input data,\n    output reg [3:0] q\n);\n\n    always @(posedge clk) begin\n        if (shift_ena)\n            q <= {q[2:0], data};\n        else if (count_ena)\n            q <= q - 4'd1;\n    end\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-89x6nsux/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-h_yucbae/test.sv:63: $finish called at 10356 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 2071 samples\n\nSimulation finished at 10356 ps\nMismatches: 0 in 2071 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob012",
-      "title": "xnorgate",
-      "trial": 3,
+      "problem_id": "Prob134",
+      "title": "2014 q3c",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.022,
-      "initial_response_cached": true,
+      "elapsed_seconds": 17.002,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n\n    assign out = ~(a ^ b);\n\nendmodule",
+          "candidate": "module TopModule (\n    input  clk,\n    input  x,\n    input  [2:0] y,\n    output Y0,\n    output z\n);\n    reg y0_r;\n    reg z_r;\n\n    always @(*) begin\n        case (y)\n            3'b000: begin y0_r = x;  z_r = 1'b0; end\n            3'b001: begin y0_r = ~x; z_r = 1'b0; end\n            3'b010: begin y0_r = x;  z_r = 1'b0; end\n            3'b011: begin y0_r = ~x; z_r = 1'b1; end\n            3'b100: begin y0_r = ~x; z_r = 1'b1; end\n            default: begin y0_r = 1'b0; z_r = 1'b0; end\n        endcase\n    end\n\n    assign Y0 = y0_r;\n    assign z  = z_r;\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-9hshv_y_/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-skvw0fbc/test.sv:18: $finish called at 1001 (1ps)\nHint: Output 'Y0' has no mismatches.\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 200 samples\n\nSimulation finished at 1001 ps\nMismatches: 0 in 200 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob013",
-      "title": "m2014 q4e",
-      "trial": 3,
+      "problem_id": "Prob075",
+      "title": "counter 2bc",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.023,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.442,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n    assign out = ~(in1 | in2);\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input areset,\n    input train_valid,\n    input train_taken,\n    output [1:0] state\n);\n    reg [1:0] cnt;\n    assign state = cnt;\n\n    always @(posedge clk or posedge areset) begin\n        if (areset)\n            cnt <= 2'b01;\n        else if (train_valid) begin\n            if (train_taken && cnt != 2'b11)\n                cnt <= cnt + 2'b01;\n            else if (!train_taken && cnt != 2'b00)\n                cnt <= cnt - 2'b01;\n        end\n    end\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sfujobl1/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-wzf6f0gr/test.sv:96: $finish called at 5256 (1ps)\nHint: Output 'state' has no mismatches.\nHint: Total mismatched samples is 0 out of 1051 samples\n\nSimulation finished at 5256 ps\nMismatches: 0 in 1051 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob014",
-      "title": "andgate",
-      "trial": 3,
+      "problem_id": "Prob118",
+      "title": "history shift",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.022,
-      "initial_response_cached": true,
+      "elapsed_seconds": 7.01,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = a & b;\nendmodule",
+          "candidate": "module TopModule (\n    input clk,\n    input areset,\n    input predict_valid,\n    input predict_taken,\n    input train_mispredicted,\n    input train_taken,\n    input [31:0] train_history,\n    output [31:0] predict_history\n);\n    reg [31:0] history;\n\n    assign predict_history = history;\n\n    always @(posedge clk or posedge areset) begin\n        if (areset)\n            history <= 32'd0;\n        else if (train_mispredicted)\n            history <= {train_history[30:0], train_taken};\n        else if (predict_valid)\n            history <= {history[30:0], predict_taken};\n    end\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-14_uu_90/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ae9def71/test.sv:104: $finish called at 10276 (1ps)\nHint: Output 'predict_history' has no mismatches.\nHint: Total mismatched samples is 0 out of 2055 samples\n\nSimulation finished at 10276 ps\nMismatches: 0 in 2055 samples"
           }
         }
       ]
     },
     {
-      "problem_id": "Prob015",
-      "title": "vector1",
-      "trial": 3,
+      "problem_id": "Prob115",
+      "title": "shift18",
       "one_shot_status": "pass",
       "looped_status": "pass",
       "retry_count": 0,
       "fixed_by_retry": false,
-      "elapsed_seconds": 0.037,
-      "initial_response_cached": true,
+      "elapsed_seconds": 6.49,
+      "initial_response_cached": false,
       "attempts": [
         {
           "attempt": 0,
-          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "candidate": "module TopModule (\n  input  wire        clk,\n  input  wire        load,\n  input  wire        ena,\n  input  wire [1:0]  amount,\n  input  wire [63:0] data,\n  output reg  [63:0] q\n);\n\n  always @(posedge clk) begin\n    if (load)\n      q <= data;\n    else if (ena) begin\n      case (amount)\n        2'b00: q <= {q[62:0], 1'b0};\n        2'b01: q <= {q[55:0], 8'b0};\n        2'b10: q <= {q[63], q[63:1]};\n        2'b11: q <= {{8{q[63]}}, q[63:8]};\n      endcase\n    end\n  end\n\nendmodule",
           "judge": {
             "status": "pass",
-            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-35f0p1np/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-91snux3w/test.sv:75: $finish called at 20206 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4041 samples\n\nSimulation finished at 20206 ps\nMismatches: 0 in 4041 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob147",
+      "title": "circuit10",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 21.785,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input  clk,\n  input  a,\n  input  b,\n  output q,\n  output state\n);\n  reg state_r;\n  always @(posedge clk)\n    state_r <= (a & b) | (a & state_r) | (b & state_r);\n  assign state = state_r;\n  assign q = a ^ b ^ state_r;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-kxrp9lms/test.sv:50: $finish called at 1160 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Output 'state' has no mismatches.\nHint: Total mismatched samples is 0 out of 232 samples\n\nSimulation finished at 1160 ps\nMismatches: 0 in 232 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob084",
+      "title": "ece241 2013 q12",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 8.905,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic clk,\n    input  logic enable,\n    input  logic S,\n    input  logic A,\n    input  logic B,\n    input  logic C,\n    output logic Z\n);\n\n    logic [7:0] Q;\n\n    always_ff @(posedge clk) begin\n        if (enable)\n            Q <= {Q[6:0], S};\n    end\n\n    assign Z = Q[{A, B, C}];\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-pmh3087j/test.sv:55: $finish called at 2650 (1ps)\nHint: Output 'Z' has no mismatches.\nHint: Total mismatched samples is 0 out of 530 samples\n\nSimulation finished at 2650 ps\nMismatches: 0 in 530 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob124",
+      "title": "rule110",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 10.649,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input clk,\n  input load,\n  input [511:0] data,\n  output reg [511:0] q\n);\n  wire [511:0] left = {1'b0, q[511:1]};\n  wire [511:0] right = {q[510:0], 1'b0};\n\n  always @(posedge clk) begin\n    if (load)\n      q <= data;\n    else\n      q <= (q | right) & ~(left & q & right);\n  end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-zqa9jhij/test.sv:73: $finish called at 31416 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 6283 samples\n\nSimulation finished at 31416 ps\nMismatches: 0 in 6283 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob067",
+      "title": "countslow",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 6.25,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    input  logic       slowena,\n    output logic [3:0] q\n);\n    always_ff @(posedge clk) begin\n        if (reset)\n            q <= 4'd0;\n        else if (slowena) begin\n            if (q == 4'd9)\n                q <= 4'd0;\n            else\n                q <= q + 4'd1;\n        end\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-829ejkaw/test.sv:89: $finish called at 2496 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 499 samples\n\nSimulation finished at 2496 ps\nMismatches: 0 in 499 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob141",
+      "title": "count clock",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 15.833,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    input  logic       ena,\n    output logic       pm,\n    output logic [7:0] hh,\n    output logic [7:0] mm,\n    output logic [7:0] ss\n);\n\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            hh <= 8'h12;\n            mm <= 8'h00;\n            ss <= 8'h00;\n            pm <= 1'b0;\n        end else if (ena) begin\n            if (ss == 8'h59) begin\n                ss <= 8'h00;\n                if (mm == 8'h59) begin\n                    mm <= 8'h00;\n                    if (hh == 8'h12)\n                        hh <= 8'h01;\n                    else if (hh == 8'h11) begin\n                        hh <= 8'h12;\n                        pm <= ~pm;\n                    end\n                    else if (hh[3:0] == 4'h9)\n                        hh <= 8'h10;\n                    else\n                        hh <= hh + 8'h01;\n                end else begin\n                    mm <= (mm[3:0] == 4'h9) ? {mm[7:4] + 4'd1, 4'h0} : mm + 8'h01;\n                end\n            end else begin\n                ss <= (ss[3:0] == 4'h9) ? {ss[7:4] + 4'd1, 4'h0} : ss + 8'h01;\n            end\n        end\n    end\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\nTIMEOUT\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-r9ski_kt/test.sv:261: $finish called at 1000000 (1ps)\nHint: Output 'pm' has no mismatches.\nHint: Output 'hh' has no mismatches.\nHint: Output 'mm' has no mismatches.\nHint: Output 'ss' has no mismatches.\nHint: Total mismatched samples is 0 out of 200000 samples\n\nSimulation finished at 1000000 ps\nMismatches: 0 in 200000 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob082",
+      "title": "lfsr32",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 10.116,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  clk,\n    input  reset,\n    output reg [31:0] q\n);\n    always @(posedge clk) begin\n        if (reset)\n            q <= 32'h1;\n        else\n            q <= (q >> 1) ^ ({32{q[0]}} & 32'h80200003);\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\nTIMEOUT\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-y4zq5exg/test.sv:114: $finish called at 1000000 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 200000 samples\n\nSimulation finished at 1000000 ps\nMismatches: 0 in 200000 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob149",
+      "title": "ece241 2013 q4",
+      "one_shot_status": "wrong_output",
+      "looped_status": "wrong_output",
+      "retry_count": 2,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 29.342,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    input [2:0] s,\n    output fr2,\n    output fr1,\n    output fr0,\n    output dfr\n);\n    localparam [2:0] Z0 = 3'd0, Z1U = 3'd1, Z1D = 3'd2, Z2U = 3'd3, Z2D = 3'd4, Z3 = 3'd5;\n\n    reg [2:0] state, next;\n    reg [1:0] cz;\n    wire [1:0] lvl = s[2] ? 2'd3 : s[1] ? 2'd2 : s[0] ? 2'd1 : 2'd0;\n\n    always @(*) begin\n        case (state)\n            Z0:      cz = 2'd0;\n            Z1U, Z1D: cz = 2'd1;\n            Z2U, Z2D: cz = 2'd2;\n            default: cz = 2'd3;\n        endcase\n    end\n\n    always @(*) begin\n        if (lvl == cz)\n            next = state;\n        else if (lvl > cz) begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1U;\n                2'd2:    next = Z2U;\n                default: next = Z3;\n            endcase\n        end else begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1D;\n                default: next = Z2D;\n            endcase\n        end\n    end\n\n    always @(posedge clk) begin\n        if (reset)\n            state <= Z0;\n        else\n            state <= next;\n    end\n\n    assign fr2 = (state == Z0);\n    assign fr1 = (state == Z0) | (state == Z1U) | (state == Z1D);\n    assign fr0 = (state != Z3);\n    assign dfr = (state == Z0) | (state == Z1U) | (state == Z2U);\n\nendmodule",
+          "judge": {
+            "status": "wrong_output",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-248ko30v/test.sv:84: $finish called at 10200 (1ps)\nHint: Output 'fr2' has no mismatches.\nHint: Output 'fr1' has no mismatches.\nHint: Output 'fr0' has no mismatches.\nHint: Output 'dfr' has 1171 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 1171 out of 2040 samples\n\nSimulation finished at 10200 ps\nMismatches: 1171 in 2040 samples"
+          }
+        },
+        {
+          "attempt": 1,
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    input [2:0] s,\n    output fr2,\n    output fr1,\n    output fr0,\n    output dfr\n);\n    localparam [2:0] Z0 = 3'd0, Z1U = 3'd1, Z1D = 3'd2, Z2U = 3'd3, Z2D = 3'd4, Z3 = 3'd5;\n\n    reg [2:0] state, next;\n    reg [1:0] cz;\n    wire [1:0] lvl = s[2] ? 2'd3 : s[1] ? 2'd2 : s[0] ? 2'd1 : 2'd0;\n\n    always @(*) begin\n        case (state)\n            Z0:      cz = 2'd0;\n            Z1U, Z1D: cz = 2'd1;\n            Z2U, Z2D: cz = 2'd2;\n            default: cz = 2'd3;\n        endcase\n    end\n\n    always @(*) begin\n        if (lvl == cz)\n            next = state;\n        else if (lvl > cz) begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1U;\n                2'd2:    next = Z2U;\n                default: next = Z3;\n            endcase\n        end else begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1D;\n                default: next = Z2D;\n            endcase\n        end\n    end\n\n    always @(posedge clk) begin\n        if (reset)\n            state <= Z0;\n        else\n            state <= next;\n    end\n\n    assign fr2 = (state == Z0);\n    assign fr1 = (state == Z0) | (state == Z1U) | (state == Z1D);\n    assign fr0 = (state != Z3);\n    assign dfr = (state != Z1D) & (state != Z2D);\n\nendmodule",
+          "judge": {
+            "status": "wrong_output",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-zlef_b16/test.sv:84: $finish called at 10200 (1ps)\nHint: Output 'fr2' has no mismatches.\nHint: Output 'fr1' has no mismatches.\nHint: Output 'fr0' has no mismatches.\nHint: Output 'dfr' has 1403 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 1403 out of 2040 samples\n\nSimulation finished at 10200 ps\nMismatches: 1403 in 2040 samples"
+          }
+        },
+        {
+          "attempt": 2,
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    input [2:0] s,\n    output fr2,\n    output fr1,\n    output fr0,\n    output dfr\n);\n    localparam [2:0] Z0 = 3'd0, Z1U = 3'd1, Z1D = 3'd2, Z2U = 3'd3, Z2D = 3'd4, Z3 = 3'd5;\n\n    reg [2:0] state, next;\n    reg [1:0] cz;\n    wire [1:0] lvl = s[2] ? 2'd3 : s[1] ? 2'd2 : s[0] ? 2'd1 : 2'd0;\n\n    always @(*) begin\n        case (state)\n            Z0:      cz = 2'd0;\n            Z1U, Z1D: cz = 2'd1;\n            Z2U, Z2D: cz = 2'd2;\n            default: cz = 2'd3;\n        endcase\n    end\n\n    always @(*) begin\n        if (lvl == cz)\n            next = state;\n        else if (lvl > cz) begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1U;\n                2'd2:    next = Z2U;\n                default: next = Z3;\n            endcase\n        end else begin\n            case (lvl)\n                2'd0:    next = Z0;\n                2'd1:    next = Z1D;\n                default: next = Z2D;\n            endcase\n        end\n    end\n\n    always @(posedge clk) begin\n        if (reset)\n            state <= Z0;\n        else\n            state <= next;\n    end\n\n    assign fr2 = (state == Z0);\n    assign fr1 = (state == Z0) | (state == Z1U) | (state == Z1D);\n    assign fr0 = (state != Z3);\n    assign dfr = (state != Z1D) & (state != Z2D) & (state != Z3);\n\nendmodule",
+          "judge": {
+            "status": "wrong_output",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-v5_w6eih/test.sv:84: $finish called at 10200 (1ps)\nHint: Output 'fr2' has no mismatches.\nHint: Output 'fr1' has no mismatches.\nHint: Output 'fr0' has no mismatches.\nHint: Output 'dfr' has 1171 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 1171 out of 2040 samples\n\nSimulation finished at 10200 ps\nMismatches: 1171 in 2040 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob108",
+      "title": "rule90",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 7.259,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input clk,\n    input load,\n    input [511:0] data,\n    output reg [511:0] q\n);\n    always @(posedge clk) begin\n        if (load)\n            q <= data;\n        else\n            q <= {1'b0, q[511:1]} ^ {q[510:0], 1'b0};\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-5dy7k2v3/test.sv:75: $finish called at 35606 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 7121 samples\n\nSimulation finished at 35606 ps\nMismatches: 0 in 7121 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob078",
+      "title": "dualedge",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 17.63,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  clk,\n    input  d,\n    output q\n);\n    reg p, n;\n    always @(posedge clk) p <= d;\n    always @(negedge clk) n <= d;\n    assign q = clk ? p : n;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-pgkq67zn/test.sv:36: $finish called at 1121 (1ps)\nHint: Output 'q' has 93 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 0 out of 224 samples\n\nSimulation finished at 1121 ps\nMismatches: 0 in 224 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob045",
+      "title": "edgedetect2",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 9.22,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input clk,\n    input [7:0] in,\n    output reg [7:0] anyedge\n);\n\n    reg [7:0] in_last;\n\n    always @(posedge clk) begin\n        in_last <= in;\n        anyedge <= in ^ in_last;\n    end\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2g5df9rs/test.sv:45: $finish called at 1140 (1ps)\nHint: Output 'anyedge' has no mismatches.\nHint: Total mismatched samples is 0 out of 228 samples\n\nSimulation finished at 1140 ps\nMismatches: 0 in 228 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob037",
+      "title": "review2015 count1k",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 5.581,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input clk,\n  input reset,\n  output reg [9:0] q\n);\n  always @(posedge clk) begin\n    if (reset || q == 10'd999)\n      q <= 10'd0;\n    else\n      q <= q + 10'd1;\n  end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-0m0cikqh/test.sv:71: $finish called at 40136 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 8027 samples\n\nSimulation finished at 40136 ps\nMismatches: 0 in 8027 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob038",
+      "title": "count15",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 5.594,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input clk,\n    input reset,\n    output reg [3:0] q\n);\n    always @(posedge clk) begin\n        if (reset)\n            q <= 4'd0;\n        else\n            q <= q + 4'd1;\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-81yzj9ef/test.sv:64: $finish called at 2106 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 421 samples\n\nSimulation finished at 2106 ps\nMismatches: 0 in 421 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob035",
+      "title": "count1to10",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 5.969,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  clk,\n    input  reset,\n    output reg [3:0] q\n);\n    always @(posedge clk) begin\n        if (reset)\n            q <= 4'd1;\n        else if (q == 4'd10)\n            q <= 4'd1;\n        else\n            q <= q + 4'd1;\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-jp1xfisg/test.sv:62: $finish called at 2196 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 439 samples\n\nSimulation finished at 2196 ps\nMismatches: 0 in 439 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob040",
+      "title": "count10",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 6.153,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic       clk,\n    input  logic       reset,\n    output logic [3:0] q\n);\n    always_ff @(posedge clk) begin\n        if (reset || q == 4'd9)\n            q <= 4'd0;\n        else\n            q <= q + 4'd1;\n    end\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-x6c6nsj7/test.sv:62: $finish called at 2196 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 439 samples\n\nSimulation finished at 2196 ps\nMismatches: 0 in 439 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob145",
+      "title": "circuit8",
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 21.029,
+      "initial_response_cached": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule(\n  input  clock,\n  input  a,\n  output p,\n  output q\n);\n  logic p_r, q_r;\n  always_latch if (clock) p_r = a;\n  always_latch if (!clock) q_r = p_r;\n  assign p = p_r;\n  assign q = q_r;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-g0esfq8d/test.sv:45: $finish called at 1200 (1ps)\nHint: Output 'p' has no mismatches.\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 240 samples\n\nSimulation finished at 1200 ps\nMismatches: 0 in 240 samples"
           }
         }
       ]
     }
   ],
   "replay": {
-    "problem_id": "Prob001",
-    "title": "zero",
-    "trial": 1,
-    "one_shot_status": "wrong_output",
+    "problem_id": "Prob151",
+    "title": "review2015 fsm",
+    "one_shot_status": "compile_error",
     "looped_status": "pass",
     "retry_count": 1,
     "fixed_by_retry": true,
-    "controlled_replay": true,
-    "replay_note": "The first module is a deliberate one-line failure fixture. The second is the recorded Claude candidate.",
-    "prompt": "\nI would like you to implement a module named TopModule with the following\ninterface. All input and output ports are one bit unless otherwise\nspecified.\n\n - output zero\n\nThe module should always outputs a LOW.\n\n",
+    "elapsed_seconds": 13.537,
+    "initial_response_cached": false,
     "attempts": [
       {
         "attempt": 0,
-        "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b1;\nendmodule",
+        "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    input  logic done_counting,\n    input  logic ack,\n    output logic shift_ena,\n    output logic counting,\n    output logic done\n);\n\n    typedef enum logic [3:0] {\n        S, S1, S11, S110, B0, B1, B2, B3, COUNT, DONE_S\n    } state_t;\n\n    state_t state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S;\n        else       state <= next_state;\n    end\n\n    always_comb begin\n        next_state = state;\n        case (state)\n            S:       next_state = data ? S1 : S;\n            S1:      next_state = data ? S11 : S;\n            S11:     next_state = data ? S11 : S110;\n            S110:    next_state = data ? B0 : S;\n            B0:      next_state = B1;\n            B1:      next_state = B2;\n            B2:      next_state = B3;\n            B3:      next_state = COUNT;\n            COUNT:   next_state = done_counting ? DONE_S : COUNT;\n            DONE_S:  next_state = ack ? S : DONE_S;\n            default: next_state = S;\n        endcase\n    end\n\n    assign shift_ena = (state == B0) || (state == B1) || (state == B2) || (state == B3);\n    assign counting  = (state == COUNT);\n    assign done      = (state == DONE_S);\n\nendmodule",
         "judge": {
-          "status": "wrong_output",
-          "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ca9zucg3/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has 20 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 20 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 20 in 20 samples"
+          "status": "compile_error",
+          "output": "/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:26: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:27: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:28: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:29: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:34: error: This assignment requires an explicit cast.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-lri2ck3i/candidate.sv:35: error: This assignment requires an explicit cast.\n6 error(s) during elaboration."
         }
       },
       {
         "attempt": 1,
-        "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+        "candidate": "module TopModule (\n    input  logic clk,\n    input  logic reset,\n    input  logic data,\n    input  logic done_counting,\n    input  logic ack,\n    output logic shift_ena,\n    output logic counting,\n    output logic done\n);\n\n    typedef enum logic [3:0] {\n        S, S1, S11, S110, B0, B1, B2, B3, COUNT, DONE_S\n    } state_t;\n\n    state_t state, next_state;\n\n    always_ff @(posedge clk) begin\n        if (reset) state <= S;\n        else       state <= next_state;\n    end\n\n    always_comb begin\n        next_state = state;\n        case (state)\n            S:       if (data) next_state = S1;\n            S1:      if (data) next_state = S11; else next_state = S;\n            S11:     if (!data) next_state = S110;\n            S110:    if (data) next_state = B0; else next_state = S;\n            B0:      next_state = B1;\n            B1:      next_state = B2;\n            B2:      next_state = B3;\n            B3:      next_state = COUNT;\n            COUNT:   if (done_counting) next_state = DONE_S;\n            DONE_S:  if (ack) next_state = S;\n            default: next_state = S;\n        endcase\n    end\n\n    assign shift_ena = (state == B0) || (state == B1) || (state == B2) || (state == B3);\n    assign counting  = (state == COUNT);\n    assign done      = (state == DONE_S);\n\nendmodule",
         "judge": {
           "status": "pass",
-          "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-vibjkqs8/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-vdebpr_4/test.sv:76: $finish called at 25346 (1ps)\nHint: Output 'shift_ena' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 5069 samples\n\nSimulation finished at 25346 ps\nMismatches: 0 in 5069 samples"
         }
       }
-    ]
+    ],
+    "prompt": "\nI would like you to implement a module named TopModule with the following\ninterface. All input and output ports are one bit unless otherwise\nspecified.\n\n - input  clk\n - input  reset\n - input  data\n - input  done_counting\n - input  ack\n - output shift_ena\n - output counting\n - output done\n\nThe module should implement a timer that:\n\n  (1) is started when a particular pattern (1101) is detected,\n  (2) shifts in 4 more bits to determine the duration to delay,\n  (3) waits for the counters to finish counting, and\n  (4) notifies the user and waits for the user to acknowledge the timer.\n\nIn this problem, implement just the finite-state machine that controls\nthe timer. The data path (counters and some comparators) are not included\nhere.\n\nThe serial data is available on the data input pin. When the pattern 1101\nis received, the state machine must then assert output shift_ena for\nexactly 4 clock cycles. After that, the state machine asserts its\ncounting output to indicate it is waiting for the counters, and waits\nuntil input done_counting is high.At that point, the state machine must\nassert done to notify the user the timer has timed out, and waits until\ninput ack is 1 before being reset to look for the next occurrence of the\nstart sequence (1101). The state machine should have a active high\nsynchronous reset, setting the state to where it begins searching for the\ninput sequence 1101. Assume all sequential logic is triggered on the\npositive edge of the clock.\n\n",
+    "replay_note": "Natural run evidence: the first candidate failed and the next candidate passed after simulator feedback."
   }
 }
