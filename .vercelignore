@@ -1,0 +1,11 @@
+.venv
+data/claude_cache
+data/raw
+src
+scripts
+tests
+*.pyc
+__pycache__
+README.md
+requirements.txt
+data/verilog_eval

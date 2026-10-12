@@ -1,0 +1,10 @@
+.venv/
+data/claude_cache/
+data/raw/
+__pycache__/
+.pytest_cache/
+.DS_Store
+node_modules/
+*.pyc
+*.out
+*.vcd

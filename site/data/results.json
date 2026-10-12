@@ -1,0 +1,1004 @@
+{
+  "project": "SiliconLoop",
+  "recorded_with": "Claude Haiku 5.5 via Claude Code, 2026-10-12",
+  "model": "claude-haiku-5-5",
+  "dataset": "NVlabs VerilogEval dataset_spec-to-rtl",
+  "dataset_target_problems": 156,
+  "pilot_problems_per_trial": 15,
+  "repeats": 3,
+  "max_retries": 2,
+  "one_shot_pass_rate": 1.0,
+  "looped_pass_rate": 1.0,
+  "one_shot_passes": 45,
+  "looped_passes": 45,
+  "evaluated_attempts": 45,
+  "fixed_by_retries": 0,
+  "one_shot_failure_breakdown": {
+    "pass": 45
+  },
+  "looped_failure_breakdown": {
+    "pass": 45
+  },
+  "mean_seconds_per_problem": 6.108,
+  "direct_api_cost_usd": 0,
+  "llm_calls_made": 45,
+  "llm_calls_executed": 45,
+  "llm_cache_hits": 45,
+  "rows": [
+    {
+      "problem_id": "Prob001",
+      "title": "zero",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.031,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-0qmhi6ya/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob002",
+      "title": "m2014 q4i",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output out\n);\n    assign out = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-h53l1mda/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob003",
+      "title": "step one",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-bx7cu6vb/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob004",
+      "title": "vector2",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic [31:0] in,\n    output logic [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-52s3enok/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob005",
+      "title": "notgate",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule(input in, output out);\n  assign out = ~in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-qy3f2wd_/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob006",
+      "title": "vectorr",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.021,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic [7:0] in,\n    output logic [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-re55fulv/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob007",
+      "title": "wire",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-8tyvr5o4/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob008",
+      "title": "m2014 q4h",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-pbknuwqk/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob009",
+      "title": "popcount3",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.031,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic [2:0] in,\n    output logic [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-g_s1jjpl/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob010",
+      "title": "mt2015 q4a",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.024,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  x,\n    input  y,\n    output z\n);\n    assign z = (x ^ y) & x;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-nttkob8i/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob011",
+      "title": "norgate",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a | b);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sihsoitq/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob012",
+      "title": "xnorgate",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a ^ b);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-q1018pkk/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob013",
+      "title": "m2014 q4e",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.017,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n    assign out = ~(in1 | in2);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-w93gq336/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob014",
+      "title": "andgate",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input  a,\n  input  b,\n  output out\n);\n  assign out = a & b;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2b2egk17/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob015",
+      "title": "vector1",
+      "trial": 1,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-tpm1u3oe/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob001",
+      "title": "zero",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-46at0g_c/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob002",
+      "title": "m2014 q4i",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.017,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output out\n);\n    assign out = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-l9w5loes/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob003",
+      "title": "step one",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.017,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-w_06_h2r/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob004",
+      "title": "vector2",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.017,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [31:0] in,\n    output [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-hs18azy4/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob005",
+      "title": "notgate",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic in,\n    output logic out\n);\n    assign out = ~in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-uz_siqmm/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob006",
+      "title": "vectorr",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [7:0] in,\n    output [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-7imtfrak/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob007",
+      "title": "wire",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-udz7o9jz/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob008",
+      "title": "m2014 q4h",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input  logic in,\n  output logic out\n);\n\n  assign out = in;\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-1mgpy4bg/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob009",
+      "title": "popcount3",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic [2:0] in,\n    output logic [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-14om1lc3/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob010",
+      "title": "mt2015 q4a",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  wire x,\n    input  wire y,\n    output wire z\n);\n    assign z = (x ^ y) & x;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-_jc3zau4/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob011",
+      "title": "norgate",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.022,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  input  a,\n  input  b,\n  output out\n);\n  assign out = ~(a | b);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2yiktmx5/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob012",
+      "title": "xnorgate",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.036,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = ~(a ^ b);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-l77mthut/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob013",
+      "title": "m2014 q4e",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.034,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n\n    assign out = ~(in1 | in2);\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gulz8pao/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob014",
+      "title": "andgate",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.027,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = a & b;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-gy9unrdn/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob015",
+      "title": "vector1",
+      "trial": 2,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.02,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-zm1re5us/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob001",
+      "title": "zero",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.018,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ceatysu3/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob002",
+      "title": "m2014 q4i",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.02,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n  output out\n);\n  assign out = 1'b0;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-hd6eruvm/test.sv:14: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob003",
+      "title": "step one",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.024,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    output one\n);\n    assign one = 1'b1;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-c8aea19p/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'one' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob004",
+      "title": "vector2",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.02,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [31:0] in,\n    output [31:0] out\n);\n    assign out = {in[7:0], in[15:8], in[23:16], in[31:24]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-fa6zdxa1/test.sv:33: $finish called at 550 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 110 samples\n\nSimulation finished at 550 ps\nMismatches: 0 in 110 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob005",
+      "title": "notgate",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.025,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = ~in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-d3_hlrtf/test.sv:37: $finish called at 1196 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 239 samples\n\nSimulation finished at 1196 ps\nMismatches: 0 in 239 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob006",
+      "title": "vectorr",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.024,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [7:0] in,\n    output [7:0] out\n);\n    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-j6tosdec/test.sv:43: $finish called at 1090 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob007",
+      "title": "wire",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.019,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-x_d0d3n4/test.sv:36: $finish called at 601 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 120 samples\n\nSimulation finished at 601 ps\nMismatches: 0 in 120 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob008",
+      "title": "m2014 q4h",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.059,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in,\n    output out\n);\n    assign out = in;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-53y5t4zn/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob009",
+      "title": "popcount3",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.026,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [2:0] in,\n    output [1:0] out\n);\n    assign out = in[0] + in[1] + in[2];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-p2a92l6u/test.sv:36: $finish called at 1100 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 220 samples\n\nSimulation finished at 1100 ps\nMismatches: 0 in 220 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob010",
+      "title": "mt2015 q4a",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.028,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  logic x,\n    input  logic y,\n    output logic z\n);\n\n    assign z = (x ^ y) & x;\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-2p7pwz5h/test.sv:17: $finish called at 1011 (1ps)\nHint: Output 'z' has no mismatches.\nHint: Total mismatched samples is 0 out of 202 samples\n\nSimulation finished at 1011 ps\nMismatches: 0 in 202 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob011",
+      "title": "norgate",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.021,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule(\n  input  a,\n  input  b,\n  output out\n);\n  assign out = ~(a | b);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-89x6nsux/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob012",
+      "title": "xnorgate",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.022,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n\n    assign out = ~(a ^ b);\n\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-9hshv_y_/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob013",
+      "title": "m2014 q4e",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.023,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  in1,\n    input  in2,\n    output out\n);\n    assign out = ~(in1 | in2);\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-sfujobl1/test.sv:16: $finish called at 501 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 100 samples\n\nSimulation finished at 501 ps\nMismatches: 0 in 100 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob014",
+      "title": "andgate",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.022,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  a,\n    input  b,\n    output out\n);\n    assign out = a & b;\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-14_uu_90/test.sv:38: $finish called at 1096 (1ps)\nHint: Output 'out' has no mismatches.\nHint: Total mismatched samples is 0 out of 219 samples\n\nSimulation finished at 1096 ps\nMismatches: 0 in 219 samples"
+          }
+        }
+      ]
+    },
+    {
+      "problem_id": "Prob015",
+      "title": "vector1",
+      "trial": 3,
+      "one_shot_status": "pass",
+      "looped_status": "pass",
+      "retry_count": 0,
+      "fixed_by_retry": false,
+      "elapsed_seconds": 0.037,
+      "initial_response_cached": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "candidate": "module TopModule (\n    input  [15:0] in,\n    output [7:0]  out_hi,\n    output [7:0]  out_lo\n);\n    assign out_hi = in[15:8];\n    assign out_lo = in[7:0];\nendmodule",
+          "judge": {
+            "status": "pass",
+            "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-35f0p1np/test.sv:35: $finish called at 1090 (1ps)\nHint: Output 'out_hi' has no mismatches.\nHint: Output 'out_lo' has no mismatches.\nHint: Total mismatched samples is 0 out of 218 samples\n\nSimulation finished at 1090 ps\nMismatches: 0 in 218 samples"
+          }
+        }
+      ]
+    }
+  ],
+  "replay": {
+    "problem_id": "Prob001",
+    "title": "zero",
+    "trial": 1,
+    "one_shot_status": "wrong_output",
+    "looped_status": "pass",
+    "retry_count": 1,
+    "fixed_by_retry": true,
+    "controlled_replay": true,
+    "replay_note": "The first module is a deliberate one-line failure fixture. The second is the recorded Claude candidate.",
+    "prompt": "\nI would like you to implement a module named TopModule with the following\ninterface. All input and output ports are one bit unless otherwise\nspecified.\n\n - output zero\n\nThe module should always outputs a LOW.\n\n",
+    "attempts": [
+      {
+        "attempt": 0,
+        "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b1;\nendmodule",
+        "judge": {
+          "status": "wrong_output",
+          "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-ca9zucg3/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has 20 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 20 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 20 in 20 samples"
+        }
+      },
+      {
+        "attempt": 1,
+        "candidate": "module TopModule (\n    output zero\n);\n    assign zero = 1'b0;\nendmodule",
+        "judge": {
+          "status": "pass",
+          "output": "VCD info: dumpfile wave.vcd opened for output.\n/var/folders/x7/jctvg7x928x8vhb2wjxr16k40000gn/T/siliconloop-vibjkqs8/test.sv:30: $finish called at 102 (1ps)\nHint: Output 'zero' has no mismatches.\nHint: Total mismatched samples is 0 out of 20 samples\n\nSimulation finished at 102 ps\nMismatches: 0 in 20 samples"
+        }
+      }
+    ]
+  }
+}
