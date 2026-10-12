@@ -149,6 +149,7 @@ body {
 .eyebrow { /* added: small label above headings, in the nav-link voice */
   font-size: 0.9375rem; font-weight: 600; color: var(--color-tungsten); letter-spacing: 0.01em;
 }
+.hero .eyebrow { margin-bottom: 1rem; } /* the display line-height (0.96) lets glyph ascenders reach up into a label sitting flush above */
 .mono { font-family: var(--font-mono); font-size: 0.9375em; }
 
 /* Header */

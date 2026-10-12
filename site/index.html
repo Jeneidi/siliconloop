@@ -72,7 +72,7 @@
 
   <main id="main" tabindex="-1">
     <section class="hero wrap" id="top" aria-labelledby="title">
-      <p class="eyebrow">A2 agentic workflow for chip design</p>
+      <p class="eyebrow">Agentic workflow for chip design</p>
       <h1 id="title" class="display">
         <span class="line"><span>Code is not done</span></span>
         <span class="line"><span>until silicon says pass.</span></span>
@@ -128,15 +128,15 @@ pass / feedback</pre>
         <h2 id="results-title" class="h2">Feedback rescued the hard cases.</h2>
         <p class="lead">60 hard compatible problems, 2 allowed retries, and 78 new Claude outputs. One-shot is the baseline.</p>
         <div class="stats">
-          <div class="stat"><b>73.33333333333333%</b><span>One-shot pass rate</span></div>
-          <div class="stat"><b>98.33333333333333%</b><span>Looped pass rate</span></div>
+          <div class="stat"><b>73.3%</b><span>One-shot pass rate</span></div>
+          <div class="stat"><b>98.3%</b><span>Looped pass rate</span></div>
           <div class="stat"><b>78</b><span>New Claude calls</span></div>
-          <div class="stat"><b>1160.266s</b><span>Total run time</span></div>
+          <div class="stat"><b>19 min</b><span>Total run time (1,160 s)</span></div>
         </div>
         <p class="section-note">The official dataset contains 156 problems. 155 compiled with Icarus 13.0 in the compatibility sweep. Prob099 was excluded because its testbench references Y2 and Y4, while its reference module exposes Y1 and Y3. Feedback fixed 15 failures. Prob149 remained a wrong-output failure after two retries.</p>
         <div class="result-table-wrap">
           <table class="result-table" aria-label="Selected hard-problem results">
-            <thead><tr><th>Problem</th><th>Score</th><th>One-shot</th><th>Looped</th><th>Retries</th></tr></thead>
+            <thead><tr><th>Problem</th><th>Hardness score</th><th>One-shot</th><th>Looped</th><th>Retries</th></tr></thead>
             <tbody id="results-body"><tr><td colspan="5">Recorded hard-problem results</td></tr></tbody>
           </table>
         </div>
