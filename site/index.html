@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SiliconLoop | Verilog that has to pass simulation</title>
-  <meta name="description" content="SiliconLoop measures whether an LLM-written Verilog module survives an Icarus Verilog testbench.">
+  <title>SiliconLoop | AI-written chip code, checked by a machine</title>
+  <meta name="description" content="An AI writes chip-design code and an automatic tester checks every output. With retries it solved 59 of 60 hard problems, up from 44 on the first try.">
   <meta name="theme-color" content="#16181b">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2316181b'/%3E%3Cg fill='%23ff7a45'%3E%3Crect x='4' y='9' width='2.4' height='6' rx='1.2'/%3E%3Crect x='8.2' y='6' width='2.4' height='12' rx='1.2'/%3E%3Crect x='12.4' y='4' width='2.4' height='16' rx='1.2'/%3E%3Crect x='16.6' y='7' width='2.4' height='10' rx='1.2'/%3E%3C/g%3E%3C/svg%3E">
@@ -44,7 +44,8 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#results">Results</a></li>
           <li><a href="#how">How it works</a></li>
-          <li><a href="#try">Replay</a></li>
+          <li><a href="#try">Watch a fix</a></li>
+          <li><a href="#technical">Technical details</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -52,7 +53,7 @@
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
           <span>GitHub</span>
         </a>
-        <a class="btn btn-primary header-cta" href="#try">Replay a fix</a>
+        <a class="btn btn-primary header-cta" href="#try">Watch a fix</a>
         <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -62,25 +63,26 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#results">Results</a></li>
           <li><a href="#how">How it works</a></li>
-          <li><a href="#try">Replay</a></li>
+          <li><a href="#try">Watch a fix</a></li>
+          <li><a href="#technical">Technical details</a></li>
           <li><a href="https://github.com/Jeneidi/siliconloop" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
-        <a class="btn btn-primary mobile-nav-cta" href="#try">Replay a fix</a>
+        <a class="btn btn-primary mobile-nav-cta" href="#try">Watch a fix</a>
       </div>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
     <section class="hero wrap" id="top" aria-labelledby="title">
-      <p class="eyebrow">Agentic workflow for chip design</p>
+      <p class="eyebrow">AI chip design, checked by machine</p>
       <h1 id="title" class="display">
-        <span class="line"><span>Code is not done</span></span>
-        <span class="line"><span>until silicon says pass.</span></span>
+        <span class="line"><span>AI writes chip code.</span></span>
+        <span class="line"><span>A machine checks it.</span></span>
       </h1>
-      <p class="lead hero-sub">SiliconLoop asks an LLM to write Verilog, then lets an Icarus Verilog testbench decide whether the circuit actually works.</p>
+      <p class="lead hero-sub">An AI (Claude) writes chip-design code (Verilog) and an automatic tester sends its mistakes back to fix: 59 of 60 hard problems solved, up from 44 on the first try.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#try">Replay a real fix</a>
-        <a class="btn btn-ghost" href="#results">See the numbers</a>
+        <a class="btn btn-primary" href="#try">Watch it fix a mistake</a>
+        <a class="btn btn-ghost" href="#results">See the results</a>
       </div>
     </section>
 
@@ -88,36 +90,36 @@
       <div class="split">
         <div>
           <p class="eyebrow">The problem</p>
-          <h2 id="overview-title" class="h2">Looks right is not a verification result.</h2>
-          <p class="prose">LLM-generated RTL can be syntactically plausible while still producing the wrong signal. SiliconLoop keeps the model away from the reference solution and gives it only the English spec, then the simulator verdict.</p>
-          <p class="prose">That same black-box discipline fits neural networks on edge devices, PyTorch signal processing, wafer yield analytics, SQL-backed workflows, and agentic AI systems built around an LLM or LangChain.</p>
+          <h2 id="overview-title" class="h2">Code that looks right can still be wrong.</h2>
+          <p class="prose">Every computer chip is designed in code before it is made. A bug found after the chips are made can cost millions. In 1994, a math bug in Intel's Pentium chip cost the company $475 million in replacements.</p>
+          <p class="prose">AI can now write this chip-design code, and the code often looks fine. Looking fine is not proof. SiliconLoop counts a design as working only when a machine runs it and every output matches the official answer.</p>
         </div>
-        <div class="media" aria-label="Verilog module and simulator verdict">
+        <div class="media" aria-label="A small piece of chip-design code and the tester's result">
           <pre class="code">module TopModule(output zero);
   assign zero = 1'b0;
 endmodule
 
-Icarus Verilog
+Tester result
 Mismatches: 0 in 20 samples</pre>
         </div>
       </div>
       <div class="split flip">
-        <div class="media" aria-label="Evaluation loop">
-          <pre class="code">English spec
+        <div class="media" aria-label="How one problem flows through the loop">
+          <pre class="code">English description of a circuit
       ↓
-Claude Haiku 5.5
+AI model (Claude Haiku 5.5)
       ↓
-TopModule.sv
+Chip-design code
       ↓
-Icarus + testbench
+Automatic tester
       ↓
-pass / feedback</pre>
+Pass, or error sent back to the AI</pre>
         </div>
         <div>
           <p class="eyebrow">What it does</p>
-          <h3 class="h3">A compiler-and-testbench feedback loop.</h3>
-          <p class="prose">For every problem, Python writes the candidate into a temporary folder, compiles it with Icarus Verilog 13.0, runs the official testbench, and records pass, wrong output, compile error, or timeout.</p>
-          <p class="prose">The site replays recorded evidence with no API key. The full implementation, cached model responses, and tests are in the repository.</p>
+          <h3 class="h3">A tester, not a guess, has the final say.</h3>
+          <p class="prose">For each problem, the tester builds the AI's design, runs it, and compares every output with the official answer. The AI never sees that answer.</p>
+          <p class="prose">Each try gets one of four results: passed, wrong output, did not build, or too slow. The demo below replays the real run, so it needs no AI account. All the code and saved AI answers are on GitHub.</p>
         </div>
       </div>
     </section>
@@ -125,19 +127,19 @@ pass / feedback</pre>
     <section class="section band center" id="results" aria-labelledby="results-title">
       <div class="wrap">
         <p class="eyebrow">Measured, not claimed</p>
-        <h2 id="results-title" class="h2">Feedback rescued the hard cases.</h2>
-        <p class="lead">60 hard compatible problems, 2 allowed retries, and 78 new Claude outputs. One-shot is the baseline.</p>
+        <h2 id="results-title" class="h2">Second chances fixed 15 of 16 failures.</h2>
+        <p class="lead">The test: 60 of the hardest problems from NVIDIA's public chip-design test set (VerilogEval), with up to 2 extra tries each. The AI's first try is the number to beat. Higher is better.</p>
         <div class="stats">
-          <div class="stat"><b>73.3%</b><span>One-shot pass rate</span></div>
-          <div class="stat"><b>98.3%</b><span>Looped pass rate</span></div>
-          <div class="stat"><b>78</b><span>New Claude calls</span></div>
-          <div class="stat"><b>19 min</b><span>Total run time (1,160 s)</span></div>
+          <div class="stat"><b>73.3%</b><span>Solved on the first try (44 of 60)</span></div>
+          <div class="stat"><b>98.3%</b><span>Solved with retries (59 of 60), up from 73.3%</span></div>
+          <div class="stat"><b>78</b><span>Times the AI was asked: 60 first tries plus 18 retries</span></div>
+          <div class="stat"><b>19 min</b><span>For the whole run (1,160 seconds)</span></div>
         </div>
-        <p class="section-note">The official dataset contains 156 problems. 155 compiled with Icarus 13.0 in the compatibility sweep. Prob099 was excluded because its testbench references Y2 and Y4, while its reference module exposes Y1 and Y3. Feedback fixed 15 failures. Prob149 remained a wrong-output failure after two retries.</p>
+        <p class="section-note">The full public test set has 156 problems. 155 work with this tester. One (Prob099) was left out because its official test checks outputs its official answer does not have. One problem (Prob149) still gave a wrong output after two retries.</p>
         <div class="result-table-wrap">
-          <table class="result-table" aria-label="Selected hard-problem results">
-            <thead><tr><th>Problem</th><th>Hardness score</th><th>One-shot</th><th>Looped</th><th>Retries</th></tr></thead>
-            <tbody id="results-body"><tr><td colspan="5">Recorded hard-problem results</td></tr></tbody>
+          <table class="result-table" aria-label="Result for each hard problem">
+            <thead><tr><th>Problem</th><th>Difficulty score (higher is harder)</th><th>First try</th><th>With retries</th><th>Retries used</th></tr></thead>
+            <tbody id="results-body"><tr><td colspan="5">Loading the result for each problem</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -146,16 +148,16 @@ pass / feedback</pre>
     <section class="section wrap" id="how" aria-labelledby="how-title">
       <div class="split">
         <div>
-          <p class="eyebrow">The method</p>
-          <h2 id="how-title" class="h2">The model proposes. The testbench decides.</h2>
-          <p class="prose">The experiment keeps the LLM step narrow and makes the executable verification mechanism visible. It is Python orchestration around a real simulator, not a screenshot of a promising answer.</p>
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title" class="h2">The AI suggests. The tester decides.</h2>
+          <p class="prose">The AI has one small job: write the design. Whether it works is decided by actually running it, not by reading the code and hoping.</p>
         </div>
         <ol class="steps">
-          <li><div><b>Load the official specs</b><p>Use the NVlabs VerilogEval spec-to-RTL prompts, references, and testbenches under the MIT license.</p></div></li>
-          <li><div><b>Generate one RTL module</b><p>Claude Haiku 5.5 sees the English problem and returns one standalone TopModule.</p></div></li>
-          <li><div><b>Run the black-box judge</b><p>Icarus Verilog compiles and runs the untouched testbench with a 10-second timeout.</p></div></li>
-          <li><div><b>Feed back simulator text</b><p>On failure, the agent can use compiler output or mismatch text for up to 2 retries.</p></div></li>
-          <li><div><b>Compare to the baseline</b><p>Aggregate one-shot and looped pass rates, failure categories, retry fixes, calls, and latency.</p></div></li>
+          <li><div><b>Start from a public test set</b><p>Each problem has an English description of a circuit, an official answer, and an official test.</p></div></li>
+          <li><div><b>The AI writes the code</b><p>Claude reads only the English description and writes one design.</p></div></li>
+          <li><div><b>The tester runs it</b><p>The design is built and checked output by output. A run longer than 10 seconds counts as a fail.</p></div></li>
+          <li><div><b>Errors go back to the AI</b><p>If it fails, the AI gets the tester's error message and tries again, up to 2 more times.</p></div></li>
+          <li><div><b>Compare with the first try</b><p>The final score is set against the first-try score, so the gain from retrying is measured, not assumed.</p></div></li>
         </ol>
       </div>
     </section>
@@ -163,50 +165,66 @@ pass / feedback</pre>
     <section class="section wrap" id="try" aria-labelledby="try-title">
       <div class="split flip">
         <div class="card">
-          <label class="label" for="demo-run">Recorded run</label>
+          <label class="label" for="demo-run">Recorded example</label>
           <div class="replay-controls">
-            <select id="demo-run" class="control" aria-label="Choose a recorded run"></select>
-            <button id="replay-button" class="btn btn-primary" type="button">Replay evidence</button>
+            <select id="demo-run" class="control" aria-label="Choose a recorded example"></select>
+            <button id="replay-button" class="btn btn-primary" type="button">Show how it fixed the error</button>
           </div>
-          <p id="replay-note" class="hint">No key required. This is a deterministic replay of recorded judge output.</p>
+          <p id="replay-note" class="hint">No account needed. This replays a real recorded run, step by step.</p>
         </div>
         <div>
           <p class="eyebrow">Try it</p>
-          <h2 id="try-title" class="h2">Watch a wrong module become a pass.</h2>
-          <p class="prose">This natural replay uses Prob151 from the selected run. Its first candidate failed to compile, the retry received the real Icarus error, and the repaired candidate passed the official testbench.</p>
+          <h2 id="try-title" class="h2">Watch broken code become a pass.</h2>
+          <p class="prose">This is a real example from the 60-problem run (problem Prob151). The AI's first design did not build. It got the tester's error message, fixed the code, and its second design passed the official test.</p>
         </div>
       </div>
       <div class="replay-grid" aria-live="polite">
         <div class="replay-step">
-          <h3 class="h3">Problem spec</h3>
-          <pre id="demo-spec" class="code">Recorded problem specification</pre>
+          <h3 class="h3">1. The English description</h3>
+          <pre id="demo-spec" class="code">Loading the description</pre>
         </div>
         <div class="replay-step">
-          <h3 class="h3">First attempt</h3>
-          <p id="first-status" class="replay-status">Recorded first verdict</p>
-          <pre id="first-candidate" class="code">Recorded first candidate</pre>
+          <h3 class="h3">2. The AI's first try</h3>
+          <p id="first-status" class="replay-status">Loading the first result</p>
+          <pre id="first-candidate" class="code">Loading the first try</pre>
         </div>
         <div class="replay-step">
-          <h3 class="h3">Simulator feedback</h3>
-          <pre id="demo-feedback" class="code">Recorded simulator feedback</pre>
+          <h3 class="h3">3. The error message sent back</h3>
+          <pre id="demo-feedback" class="code">Loading the error message</pre>
         </div>
         <div class="replay-step">
-          <h3 class="h3">Second attempt</h3>
-          <p id="second-status" class="replay-status">Recorded second verdict</p>
-          <pre id="second-candidate" class="code">Recorded second candidate</pre>
+          <h3 class="h3">4. The AI's second try</h3>
+          <p id="second-status" class="replay-status">Loading the second result</p>
+          <pre id="second-candidate" class="code">Loading the second try</pre>
         </div>
       </div>
-      <p class="fine-print">Recorded with Claude Haiku 5.5 via Claude Code, 2026-10-12. The replay is natural evidence from the 60-problem run, not a staged fixture.</p>
+      <p class="fine-print">Recorded with Claude Haiku 5.5 on 2026-10-12. This is a real result from the 60-problem run, not a staged example.</p>
     </section>
 
     <section class="section band center" aria-labelledby="cta-title">
       <div class="wrap">
-        <h2 id="cta-title" class="h2">Read the judge, not the pitch.</h2>
-        <p class="prose">The repository includes the Python adapter, Icarus judge, cached outputs, result JSON, pytest gate, and the static site.</p>
+        <h2 id="cta-title" class="h2">Check the tester's results yourself.</h2>
+        <p class="prose">The GitHub project has the code that asks the AI, the tester setup, every saved AI answer, the full results file, the automated tests, and this website.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://github.com/Jeneidi/siliconloop" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn btn-ghost" href="https://mjeneidi.com" target="_blank" rel="noopener">More projects</a>
         </div>
+      </div>
+    </section>
+    <section class="section wrap" id="technical" aria-labelledby="technical-title">
+      <div class="split">
+        <div>
+          <p class="eyebrow">For engineers</p>
+          <h2 id="technical-title" class="h2">Technical details</h2>
+          <p class="prose">Spec-to-RTL generation with Claude Haiku 5.5 (claude-haiku-5-5) via the Claude Code CLI, recorded 2026-10-12, judged by Icarus Verilog 13.0. One-shot is the baseline; the agentic loop feeds simulator output back for up to 2 retries.</p>
+          <p class="fine-print">Limitations: 60 selected problems, not full-dataset performance; one model and one recorded run. The site replays recorded evidence and does not compile visitor RTL. Test gate: <code>.venv/bin/python -m pytest -q</code>.</p>
+        </div>
+        <ol class="steps">
+          <li><div><b>Dataset</b><p>NVlabs VerilogEval <code>dataset_spec-to-rtl</code> (MIT license): 156 problems with prompts, reference modules, and testbenches. 155 pass an Icarus 13.0 compatibility sweep. Prob099 is excluded: its testbench references Y2 and Y4, while its reference module exposes Y1 and Y3.</p></div></li>
+          <li><div><b>Selection</b><p>The 60 hardest compatible problems, ranked before any model call by a metadata-only score: 100 &times; FSM indicator + 50 &times; sequential indicator + 10 &times; temporal/state keyword count + prompt lines + 0.5 &times; reference lines + 0.25 &times; testbench lines. Ties break on problem ID.</p></div></li>
+          <li><div><b>Judge</b><p><code>iverilog -g2012</code> compiles the candidate TopModule, reference, and untouched testbench in a temp folder; <code>vvp</code> runs it with a 10-second timeout. Pass only on <code>Mismatches: 0</code>. Statuses: pass, wrong_output, compile_error, timeout. The model never sees the reference module or testbench.</p></div></li>
+          <li><div><b>Results</b><p>One-shot 73.3% (44/60: 14 compile errors, 2 wrong outputs). Looped 98.3% (59/60); retries fixed 15. Prob149 stayed wrong_output after 2 retries. 78 LLM calls (60 one-shot + 18 retries), 0 cache hits, $0 direct API cost, 1,160 s total.</p></div></li>
+        </ol>
       </div>
     </section>
   </main>
@@ -230,7 +248,9 @@ pass / feedback</pre>
       const byId = (id) => document.getElementById(id);
       const selectedRun = byId("demo-run");
       const setText = (id, value) => { byId(id).textContent = value; };
-      const statusLine = (attempt) => `${attempt.judge.status.toUpperCase()} | ${attempt.judge.output}`;
+      const verdict = { pass: "Passed", wrong_output: "Wrong output", compile_error: "Did not build", timeout: "Too slow" };
+      const plain = (status) => verdict[status] ?? status;
+      const statusLine = (attempt) => `${plain(attempt.judge.status)} | Tester output: ${attempt.judge.output}`;
       const renderReplay = (data) => {
         const attempts = data.replay.attempts;
         setText("demo-spec", data.replay.prompt.trim());
@@ -245,7 +265,7 @@ pass / feedback</pre>
         const grouped = new Map();
         for (const row of data.rows) {
           const score = data.selection.find((item) => item.problem_id === row.problem_id)?.score;
-          grouped.set(row.problem_id, { problem_id: row.problem_id, score, one: row.one_shot_status, looped: row.looped_status, retries: row.retry_count });
+          grouped.set(row.problem_id, { problem_id: row.problem_id, score, one: plain(row.one_shot_status), looped: plain(row.looped_status), retries: row.retry_count });
         }
         const body = byId("results-body");
         body.replaceChildren();
@@ -267,13 +287,13 @@ pass / feedback</pre>
         renderTable(data);
         const option = document.createElement("option");
         option.value = "replay";
-        option.textContent = `${data.replay.problem_id} | compile error to PASS`;
+        option.textContent = `${data.replay.problem_id} | did not build, then passed`;
         selectedRun.append(option);
         renderReplay(data);
       }).catch((error) => {
-        setText("replay-note", `Could not load recorded results: ${error.message}`);
+        setText("replay-note", `Could not load the recorded results: ${error.message}`);
       });
-      byId("replay-button").addEventListener("click", () => kitToast("Recorded evidence shown"));
+      byId("replay-button").addEventListener("click", () => kitToast("Showing the recorded fix below"));
     })();
   </script>
 </body>
