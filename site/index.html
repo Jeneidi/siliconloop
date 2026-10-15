@@ -7,7 +7,7 @@
   <meta name="description" content="An AI writes chip-design code and an automatic tester checks every output. With retries it solved 59 of 60 hard problems, up from 44 on the first try.">
   <meta name="theme-color" content="#16181b">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2316181b'/%3E%3Cg fill='%23ff7a45'%3E%3Crect x='4' y='9' width='2.4' height='6' rx='1.2'/%3E%3Crect x='8.2' y='6' width='2.4' height='12' rx='1.2'/%3E%3Crect x='12.4' y='4' width='2.4' height='16' rx='1.2'/%3E%3Crect x='16.6' y='7' width='2.4' height='10' rx='1.2'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2316181b'/%3E%3Cg transform='translate(4 4) scale(.667)' fill='none' stroke='%23ff7a45' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='16' height='16' x='4' y='4' rx='2'/%3E%3Crect width='6' height='6' x='9' y='9' rx='1'/%3E%3Cpath d='M15 2v2'/%3E%3Cpath d='M15 20v2'/%3E%3Cpath d='M2 15h2'/%3E%3Cpath d='M2 9h2'/%3E%3Cpath d='M20 15h2'/%3E%3Cpath d='M20 9h2'/%3E%3Cpath d='M9 2v2'/%3E%3Cpath d='M9 20v2'/%3E%3C/g%3E%3C/svg%3E">
   <link rel="stylesheet" href="kit.css">
   <style>
     .result-table-wrap { margin-top: clamp(2rem, 4vw, 3rem); overflow-x: auto; border: 1px solid var(--color-rule); border-radius: var(--r); background: var(--color-booth); }
@@ -36,7 +36,7 @@
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="#top">
-        <svg class="glyph" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1.7" y="9" width="2.6" height="6" rx="1.3" fill="currentColor"/><rect x="6.2" y="5" width="2.6" height="14" rx="1.3" fill="currentColor"/><rect x="10.7" y="2" width="2.6" height="20" rx="1.3" fill="currentColor"/><rect x="15.2" y="6" width="2.6" height="12" rx="1.3" fill="currentColor"/><rect x="19.7" y="10" width="2.6" height="4" rx="1.3" fill="currentColor"/></svg>
+        <svg class="glyph" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
         <span>SiliconLoop</span>
       </a>
       <nav class="desk-nav" aria-label="Sections">
@@ -74,6 +74,10 @@
 
   <main id="main" tabindex="-1">
     <section class="hero wrap" id="top" aria-labelledby="title">
+      <div class="hero-bg" aria-hidden="true">
+        <video class="hero-bg-left" src="media/hero-left.mp4" poster="media/hero-left.jpg" muted loop playsinline preload="auto"></video>
+        <video class="hero-bg-right" src="media/hero-right.mp4" poster="media/hero-right.jpg" muted loop playsinline preload="auto"></video>
+      </div>
       <p class="eyebrow">AI chip design, checked by machine</p>
       <h1 id="title" class="display">
         <span class="line"><span>AI writes chip code.</span></span>
@@ -231,7 +235,7 @@ Pass, or error sent back to the AI</pre>
 
   <footer class="wrap site-footer">
     <p class="footer-brand">
-      <svg class="glyph" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1.7" y="9" width="2.6" height="6" rx="1.3" fill="currentColor"/><rect x="6.2" y="5" width="2.6" height="14" rx="1.3" fill="currentColor"/><rect x="10.7" y="2" width="2.6" height="20" rx="1.3" fill="currentColor"/><rect x="15.2" y="6" width="2.6" height="12" rx="1.3" fill="currentColor"/><rect x="19.7" y="10" width="2.6" height="4" rx="1.3" fill="currentColor"/></svg>
+      <svg class="glyph" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
       SiliconLoop
     </p>
     <ul>
